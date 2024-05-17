@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 
 public class tryone {
 
@@ -51,10 +53,14 @@ public class tryone {
 	public tryone() {
 		initialize();
 	}
+	public void setVisible(boolean visible) {
+        frame.setVisible(visible);
+    }
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	 
 	private void initialize() {
 		
 		
@@ -64,14 +70,17 @@ public class tryone {
 			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
 			
 		}catch(Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 		frame = new JFrame();
-		frame.setBounds(100, 100, 887, 759);
+		frame.setResizable(false);
+		frame.setBounds(100, 100, 887, 663);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
 		
 		JButton btnajouter = new JButton("ajouter bien");
+		btnajouter.setForeground(new Color(0, 0, 205));
 		btnajouter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String TNumBiens =txtNumBiens.getText();
@@ -97,77 +106,84 @@ public class tryone {
 					
 					
 				}catch(Exception e1) {
-					e1.printStackTrace();
+					JOptionPane.showMessageDialog(frame, "Error: " + e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 				}
 				
 				
 			}
 		});
 		btnajouter.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnajouter.setBounds(533, 37, 221, 43);
+		btnajouter.setBounds(550, 239, 221, 43);
 		frame.getContentPane().add(btnajouter);
 		
 		JLabel lblNewLabel = new JLabel("Numero bien : ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setBounds(51, 37, 134, 43);
+		lblNewLabel.setBounds(68, 130, 134, 43);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblTypeBien = new JLabel("type bien : ");
 		lblTypeBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTypeBien.setBounds(51, 93, 134, 43);
+		lblTypeBien.setBounds(68, 186, 134, 43);
 		frame.getContentPane().add(lblTypeBien);
 		
 		JLabel lblLocalisation = new JLabel("localisation : ");
 		lblLocalisation.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblLocalisation.setBounds(51, 146, 134, 43);
+		lblLocalisation.setBounds(68, 239, 134, 43);
 		frame.getContentPane().add(lblLocalisation);
 		
 		JLabel lblPrixVente = new JLabel("prix vente : ");
 		lblPrixVente.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrixVente.setBounds(51, 198, 134, 43);
+		lblPrixVente.setBounds(68, 291, 134, 43);
 		frame.getContentPane().add(lblPrixVente);
 		
 		JLabel lblPrixLocation = new JLabel("prix location : ");
 		lblPrixLocation.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrixLocation.setBounds(51, 251, 134, 43);
+		lblPrixLocation.setBounds(68, 344, 134, 43);
 		frame.getContentPane().add(lblPrixLocation);
 		
 		JLabel lblTaille = new JLabel("taille : ");
 		lblTaille.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTaille.setBounds(51, 304, 134, 43);
+		lblTaille.setBounds(68, 397, 134, 43);
 		frame.getContentPane().add(lblTaille);
 		
 		txtNumBiens = new JTextField();
-		txtNumBiens.setBounds(183, 37, 280, 40);
+		txtNumBiens.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtNumBiens.setBounds(200, 130, 280, 40);
 		frame.getContentPane().add(txtNumBiens);
 		txtNumBiens.setColumns(10);
 		
 		txtTypeBiens = new JTextField();
+		txtTypeBiens.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtTypeBiens.setColumns(10);
-		txtTypeBiens.setBounds(183, 90, 280, 40);
+		txtTypeBiens.setBounds(200, 183, 280, 40);
 		frame.getContentPane().add(txtTypeBiens);
 		
 		txtlocalisation = new JTextField();
+		txtlocalisation.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtlocalisation.setColumns(10);
-		txtlocalisation.setBounds(183, 146, 280, 40);
+		txtlocalisation.setBounds(200, 239, 280, 40);
 		frame.getContentPane().add(txtlocalisation);
 		
 		txtPrixVent = new JTextField();
+		txtPrixVent.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtPrixVent.setColumns(10);
-		txtPrixVent.setBounds(183, 199, 280, 40);
+		txtPrixVent.setBounds(200, 292, 280, 40);
 		frame.getContentPane().add(txtPrixVent);
 		
 		txtprixLocation = new JTextField();
+		txtprixLocation.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtprixLocation.setColumns(10);
-		txtprixLocation.setBounds(183, 254, 280, 40);
+		txtprixLocation.setBounds(200, 347, 280, 40);
 		frame.getContentPane().add(txtprixLocation);
 		
 		txttaille = new JTextField();
+		txttaille.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txttaille.setColumns(10);
-		txttaille.setBounds(183, 304, 280, 40);
+		txttaille.setBounds(200, 397, 280, 40);
 		frame.getContentPane().add(txttaille);
 		
 		JButton btnNewButton = new JButton("Afficher les biens");
+		btnNewButton.setForeground(new Color(0, 0, 255));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String query = "SELECT * FROM biensImmobiliers";
@@ -179,31 +195,28 @@ public class tryone {
 					tableE.setModel(DbUtils.resultSetToTableModel(res));
 					
 				}catch(Exception e2) {
-					e2.printStackTrace();
+					JOptionPane.showMessageDialog(frame, "Error: " + e2.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnNewButton.setBounds(533, 303, 221, 43);
+		btnNewButton.setBounds(550, 396, 221, 43);
 		frame.getContentPane().add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 372, 853, 340);
+		scrollPane.setBounds(10, 450, 853, 158);
 		frame.getContentPane().add(scrollPane);
 		
 		tableE = new JTable();
 		scrollPane.setViewportView(tableE);
 		
 		JButton btnSupprimerBien = new JButton("supprimer bien");
+		btnSupprimerBien.setForeground(new Color(0, 0, 205));
 		btnSupprimerBien.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String TNumBiens =txtNumBiens.getText();
-				String TTypeBiens =txtTypeBiens.getText();
-				String Tlocalisation =txtlocalisation.getText();
-				String TPrixVent =txtPrixVent.getText();
-				String TprixLocation =txtprixLocation.getText();
-				String Ttaille =txttaille.getText();
+				
 				
 				
 				String query = " DELETE FROM biensImmobiliers WHERE NumBiens='"+TNumBiens+"'";
@@ -220,17 +233,18 @@ public class tryone {
 					txttaille.setText("");
 					
 					
-				}catch(Exception e1) {
-					e1.printStackTrace();
+				}catch(Exception e3) {
+					JOptionPane.showMessageDialog(frame, "Error: " + e3.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}
 		});
 		btnSupprimerBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnSupprimerBien.setBounds(533, 106, 221, 43);
+		btnSupprimerBien.setBounds(550, 291, 221, 43);
 		frame.getContentPane().add(btnSupprimerBien);
 		
 		JButton btnModifierBien = new JButton("modifier bien");
+		btnModifierBien.setForeground(new Color(0, 0, 205));
 		btnModifierBien.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String TNumBiens =txtNumBiens.getText();
@@ -254,13 +268,50 @@ public class tryone {
 					txttaille.setText("");
 					
 					
-				}catch(Exception e1) {
-					e1.printStackTrace();
+				}catch(Exception e4) {
+					JOptionPane.showMessageDialog(frame, "Error: " + e4.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
 		btnModifierBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnModifierBien.setBounds(533, 175, 221, 43);
+		btnModifierBien.setBounds(550, 343, 221, 43);
 		frame.getContentPane().add(btnModifierBien);
+		
+		JButton btnaffecter = new JButton("affecter des biens");
+		btnaffecter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+                affectBiens affectWindow = new affectBiens();
+                affectWindow.setVisible(true);
+
+                // Close the current window
+                frame.dispose();
+				
+			}
+		});
+		btnaffecter.setFont(new Font("Tahoma", Font.BOLD, 17));
+		btnaffecter.setBounds(550, 116, 221, 43);
+		frame.getContentPane().add(btnaffecter);
+		
+		JLabel lblNewLabel_1 = new JLabel("Gestion des Biens");
+		lblNewLabel_1.setForeground(new Color(0, 0, 255));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 31));
+		lblNewLabel_1.setBounds(246, 30, 594, 76);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JButton btnAgents = new JButton("agents");
+		btnAgents.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				agents agentWindow = new agents();
+				agentWindow.setVisible(true);
+
+                // Close the current window
+                frame.dispose();
+			}
+		});
+		btnAgents.setFont(new Font("Tahoma", Font.BOLD, 17));
+		btnAgents.setBounds(550, 181, 221, 43);
+		frame.getContentPane().add(btnAgents);
 	}
 }
