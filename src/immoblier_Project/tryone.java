@@ -1,6 +1,5 @@
 package immoblier_Project;
 
-import java.awt.EventQueue;
 import java.sql.*;
 
 import javax.swing.JFrame;
@@ -34,7 +33,7 @@ public class tryone {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,7 +44,87 @@ public class tryone {
 				}
 			}
 		});
+	}*/
+
+	/*public JFrame getFrame() {
+		return frame;
 	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public JTextField getTxtNumBiens() {
+		return txtNumBiens;
+	}
+
+	public void setTxtNumBiens(JTextField txtNumBiens) {
+		this.txtNumBiens = txtNumBiens;
+	}
+
+	public JTextField getTxtTypeBiens() {
+		return txtTypeBiens;
+	}
+
+	public void setTxtTypeBiens(JTextField txtTypeBiens) {
+		this.txtTypeBiens = txtTypeBiens;
+	}
+
+	public JTextField getTxtlocalisation() {
+		return txtlocalisation;
+	}
+
+	public void setTxtlocalisation(JTextField txtlocalisation) {
+		this.txtlocalisation = txtlocalisation;
+	}
+
+	public JTextField getTxtPrixVent() {
+		return txtPrixVent;
+	}
+
+	public void setTxtPrixVent(JTextField txtPrixVent) {
+		this.txtPrixVent = txtPrixVent;
+	}
+
+	public JTextField getTxtprixLocation() {
+		return txtprixLocation;
+	}
+
+	public void setTxtprixLocation(JTextField txtprixLocation) {
+		this.txtprixLocation = txtprixLocation;
+	}
+
+	public JTextField getTxttaille() {
+		return txttaille;
+	}
+
+	public void setTxttaille(JTextField txttaille) {
+		this.txttaille = txttaille;
+	}
+
+	public Connection getConnection() {
+		return connection;
+	}
+
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+
+	public Statement getStatement() {
+		return statement;
+	}
+
+	public void setStatement(Statement statement) {
+		this.statement = statement;
+	}
+
+	public JTable getTableE() {
+		return tableE;
+	}
+
+	public void setTableE(JTable tableE) {
+		this.tableE = tableE;
+	}*/
 
 	/**
 	 * Create the application.
@@ -67,7 +146,7 @@ public class tryone {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","ELMOKRETAR","nabil");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -313,5 +392,19 @@ public class tryone {
 		btnAgents.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnAgents.setBounds(550, 181, 221, 43);
 		frame.getContentPane().add(btnAgents);
+		
+		JButton btnClose = new JButton("<--");
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
+				window.setVisible(true);
+				
+				frame.dispose();
+			}
+		});
+		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnClose.setBackground(new Color(255, 255, 255));
+		btnClose.setBounds(0, 0, 65, 24);
+		frame.getContentPane().add(btnClose);
 	}
 }
