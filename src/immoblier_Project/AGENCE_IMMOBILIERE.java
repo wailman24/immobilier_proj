@@ -17,9 +17,12 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+<<<<<<< HEAD
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+=======
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 //import javax.swing.JScrollPane;
 
 public class AGENCE_IMMOBILIERE {
@@ -65,20 +68,30 @@ public class AGENCE_IMMOBILIERE {
 		}
 
 		frame1 = new JFrame();
+<<<<<<< HEAD
 		frame1.setResizable(false);
+=======
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame1.getContentPane().setBackground(new Color(255, 255, 255));
 		frame1.getContentPane().setForeground(new Color(0, 0, 0));
 		frame1.setBounds(100, 100, 605, 450);
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame1.getContentPane().setLayout(null);
+<<<<<<< HEAD
 		frame1.setLocationRelativeTo(null);
 		
 		panel = new JPanel();
 		panel.setBackground(Color.WHITE);
+=======
+		
+		panel = new JPanel();
+		panel.setBackground(new Color(0, 128, 128));
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		panel.setBounds(0, 0, 589, 411);
 		frame1.getContentPane().add(panel);
 		panel.setLayout(null);
 		
+<<<<<<< HEAD
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 637, 22);
 		panel.add(menuBar);
@@ -91,6 +104,58 @@ public class AGENCE_IMMOBILIERE {
 			public void actionPerformed(ActionEvent e) {
 				panel.setVisible(false);
 //				ges_Clt.setVisible(false);
+=======
+		JButton ges_biens = new JButton("Gestion des Biens");
+		ges_biens.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							tryone window = new tryone();
+							window.setVisible(true);
+							//window.getFrame().setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				frame1.setVisible(false);
+			}
+		});
+		ges_biens.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		ges_biens.setBounds(192, 119, 197, 30);
+		panel.add(ges_biens);
+		
+		JButton ges_Clt = new JButton("Gestion des Clients");
+		ges_Clt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*panel.setVisible(false);
+				ges_biens.setVisible(false);
+				JPanel panel_4 = new JPanel();
+				//panel_4.setBounds(0, 0, 589, 411);
+				panel_4.setBounds(0, 0, 949, 531);
+				frame1.getContentPane().add(panel_4);
+				panel_4.setLayout(null);*/
+				
+				//Client.ajouteClient(frame1,panel_4,panel,ges_Clt);
+				Client1 windowClt = new Client1(1);
+				windowClt.setVisible(true);
+				
+				frame1.dispose();
+			}
+		});
+		ges_Clt.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		ges_Clt.setBounds(192, 160, 197, 30);
+		panel.add(ges_Clt);
+		
+		JButton ajt_dem = new JButton("Ajouter une demande");
+		ajt_dem.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		ajt_dem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(false);
+				ges_biens.setVisible(false);
+				ges_Clt.setVisible(false);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 				
 				panel_2 = new JPanel();
 				panel_2.setBackground(new Color(240, 240, 240));
@@ -163,8 +228,13 @@ public class AGENCE_IMMOBILIERE {
 					public void actionPerformed(ActionEvent e) {
 						panel_2.setVisible(false);
 						panel.setVisible(true);
+<<<<<<< HEAD
 						//ges_biens.setVisible(true);
 						//ges_Clt.setVisible(true);
+=======
+						ges_biens.setVisible(true);
+						ges_Clt.setVisible(true);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 					}
 				});
 				btnNewButton_2.setToolTipText("Close");
@@ -175,6 +245,7 @@ public class AGENCE_IMMOBILIERE {
 				
 				panel.setVisible(true);
 			}
+<<<<<<< HEAD
 				
 			
 		});
@@ -249,6 +320,11 @@ public class AGENCE_IMMOBILIERE {
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
+=======
+		});
+		ajt_dem.setBounds(192, 75, 197, 30);
+		panel.add(ajt_dem);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		
 		//
 

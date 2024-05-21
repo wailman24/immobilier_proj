@@ -85,19 +85,29 @@ public class Client1 {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
+<<<<<<< HEAD
 			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+=======
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","ELMOKRETAR","nabil");
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		frame = new JFrame();
+<<<<<<< HEAD
 		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 965, 570);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
+=======
+		frame.getContentPane().setBackground(new Color(0, 128, 128));
+		frame.setBounds(100, 100, 965, 570);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		
 		String ch = "Select count(*) From Client";
 		try {
@@ -113,6 +123,7 @@ public class Client1 {
 		frame.getContentPane().setLayout(null);
 		
 		lblNewLabel = new JLabel("La gestion des clients");
+<<<<<<< HEAD
 		lblNewLabel.setBackground(Color.WHITE);
 		lblNewLabel.setForeground(Color.BLUE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 23));
@@ -163,32 +174,97 @@ public class Client1 {
 
 		textFieldMat = new JTextField();
 		textFieldMat.setBounds(219, 69, 218, 31);
+=======
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(170, 11, 199, 32);
+		frame.getContentPane().add(lblNewLabel);
+
+		lblMat = new JLabel("Matriculede client:");
+		lblMat.setForeground(new Color(255, 255, 255));
+		lblMat.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblMat.setBounds(0, 69, 111, 32);
+		frame.getContentPane().add(lblMat);
+
+		lblNom = new JLabel("Nom de client:");
+		lblNom.setForeground(new Color(255, 255, 255));
+		lblNom.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNom.setBounds(0, 106, 111, 32);
+		frame.getContentPane().add(lblNom);
+
+		lblPrenom = new JLabel("Prenom de client:");
+		lblPrenom.setForeground(new Color(255, 255, 255));
+		lblPrenom.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblPrenom.setBounds(0, 145, 111, 32);
+		frame.getContentPane().add(lblPrenom);
+
+		lblNumeroTel = new JLabel("Numero de telephone:");
+		lblNumeroTel.setForeground(new Color(255, 255, 255));
+		lblNumeroTel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNumeroTel.setBounds(0, 186, 137, 32);
+		frame.getContentPane().add(lblNumeroTel);
+
+		lblEmail = new JLabel("Email:");
+		lblEmail.setForeground(new Color(255, 255, 255));
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblEmail.setBounds(0, 226, 111, 32);
+		frame.getContentPane().add(lblEmail);
+
+		lblType = new JLabel("Type de client:");
+		lblType.setForeground(new Color(255, 255, 255));
+		lblType.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblType.setBounds(0, 264, 111, 32);
+		frame.getContentPane().add(lblType);
+
+		textFieldMat = new JTextField();
+		textFieldMat.setBounds(141, 75, 111, 24);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldMat);
 		textFieldMat.setColumns(10);
 
 		textFieldNom = new JTextField();
 		textFieldNom.setColumns(10);
+<<<<<<< HEAD
 		textFieldNom.setBounds(219, 104, 218, 31);
+=======
+		textFieldNom.setBounds(141, 112, 111, 24);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldNom);
 
 		textFieldPrenom = new JTextField();
 		textFieldPrenom.setColumns(10);
+<<<<<<< HEAD
 		textFieldPrenom.setBounds(219, 141, 218, 33);
+=======
+		textFieldPrenom.setBounds(141, 151, 111, 24);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldPrenom);
 
 		textFieldNumeroTel = new JTextField();
 		textFieldNumeroTel.setColumns(10);
+<<<<<<< HEAD
 		textFieldNumeroTel.setBounds(219, 181, 218, 31);
+=======
+		textFieldNumeroTel.setBounds(141, 192, 111, 24);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldNumeroTel);
 		
 		textFieldEmail = new JTextField();
 		textFieldEmail.setColumns(10);
+<<<<<<< HEAD
 		textFieldEmail.setBounds(219, 222, 218, 32);
+=======
+		textFieldEmail.setBounds(141, 232, 111, 24);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldEmail);
 		
 		textFieldType = new JTextField();
 		textFieldType.setColumns(10);
+<<<<<<< HEAD
 		textFieldType.setBounds(219, 264, 218, 32);
+=======
+		textFieldType.setBounds(141, 270, 111, 24);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldType);
 
 
@@ -219,7 +295,11 @@ public class Client1 {
 			}
 		});
 		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 20));
+<<<<<<< HEAD
 		btnAjouter.setBounds(10, 334, 127, 40);
+=======
+		btnAjouter.setBounds(405, 74, 145, 40);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(btnAjouter);
 		
 		JButton btnModifier = new JButton("Modifier");
@@ -262,11 +342,19 @@ public class Client1 {
 			}
 		});
 		btnModifier.setFont(new Font("Tahoma", Font.PLAIN, 20));
+<<<<<<< HEAD
 		btnModifier.setBounds(147, 334, 127, 40);
 		frame.getContentPane().add(btnModifier);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(487, 69, 452, 454);
+=======
+		btnModifier.setBounds(405, 137, 145, 40);
+		frame.getContentPane().add(btnModifier);
+
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 327, 929, 162);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(scrollPane);
 
 		JTable table = new JTable();
@@ -293,10 +381,17 @@ public class Client1 {
 			}
 		});
 		btnSupprimer.setFont(new Font("Tahoma", Font.PLAIN, 20));
+<<<<<<< HEAD
 		btnSupprimer.setBounds(284, 334, 127, 40);
 		frame.getContentPane().add(btnSupprimer);
 		
 		JButton btnClose = new JButton("main");
+=======
+		btnSupprimer.setBounds(405, 200, 145, 40);
+		frame.getContentPane().add(btnSupprimer);
+		
+		JButton btnClose = new JButton("<--");
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
@@ -305,9 +400,15 @@ public class Client1 {
 				frame.dispose();
 			}
 		});
+<<<<<<< HEAD
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnClose.setBackground(new Color(255, 255, 255));
 		btnClose.setBounds(10, 6, 76, 53);
+=======
+		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnClose.setBackground(new Color(255, 255, 255));
+		btnClose.setBounds(0, 0, 65, 24);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(btnClose);
 		
 		JButton btnAfficher = new JButton("Afficher");
@@ -325,7 +426,11 @@ public class Client1 {
 			}
 		});
 		btnAfficher.setFont(new Font("Tahoma", Font.PLAIN, 20));
+<<<<<<< HEAD
 		btnAfficher.setBounds(10, 394, 401, 40);
+=======
+		btnAfficher.setBounds(405, 256, 145, 40);
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(btnAfficher);
 		
 	}

@@ -1,7 +1,5 @@
 package immoblier_Project;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -32,7 +30,7 @@ public class agents {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -43,7 +41,7 @@ public class agents {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the application.
@@ -64,7 +62,7 @@ public class agents {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","Elmokretar","nabil");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -190,6 +188,39 @@ public class agents {
 		tableagt = new JTable();
 		scrollPane.setViewportView(tableagt);
 		
+<<<<<<< HEAD
+=======
+		JButton btnAddBiens = new JButton("biens");
+		btnAddBiens.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+                // Open the Biens window
+                tryone biensWindow = new tryone();
+                biensWindow.setVisible(true);
+
+                // Close the current window
+                frame.dispose();
+				
+			}
+		});
+		btnAddBiens.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnAddBiens.setBounds(598, 255, 151, 37);
+		frame.getContentPane().add(btnAddBiens);
+		
+		JButton btnClose = new JButton("<--");
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
+				window.setVisible(true);
+				
+				frame.dispose();
+			}
+		});
+		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnClose.setBackground(new Color(255, 255, 255));
+		btnClose.setBounds(0, 0, 65, 24);
+		frame.getContentPane().add(btnClose);
+		
+>>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		JLabel lblNewLabel_1 = new JLabel("Gestion des Agents");
 		lblNewLabel_1.setForeground(new Color(0, 0, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 25));
