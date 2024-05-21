@@ -18,11 +18,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import net.proteanit.sql.DbUtils;
-<<<<<<< HEAD
 import javax.swing.JSplitPane;
 import javax.swing.JSeparator;
-=======
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 
 public class Recherche {
 
@@ -81,19 +78,15 @@ public class Recherche {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-<<<<<<< HEAD
 			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
-=======
-			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","ELMOKRETAR","nabil");
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		frame = new JFrame();
-<<<<<<< HEAD
 		frame.setResizable(false);
+		frame.getContentPane().setEnabled(false);
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 868, 538);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -103,58 +96,31 @@ public class Recherche {
 		
 		textFieldTypeBiens = new JTextField();
 		textFieldTypeBiens.setBounds(155, 223, 168, 29);
-=======
-		frame.setBounds(100, 100, 605, 450);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		textFieldTypeBiens = new JTextField();
-		textFieldTypeBiens.setBounds(10, 46, 106, 20);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldTypeBiens);
 		textFieldTypeBiens.setColumns(10);
 		
 		textFieldLocal = new JTextField();
 		textFieldLocal.setColumns(10);
-<<<<<<< HEAD
 		textFieldLocal.setBounds(155, 262, 168, 29);
-=======
-		textFieldLocal.setBounds(126, 46, 106, 20);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldLocal);
 		
 		textFieldPrixVent = new JTextField();
 		textFieldPrixVent.setColumns(10);
-<<<<<<< HEAD
 		textFieldPrixVent.setBounds(155, 301, 168, 29);
-=======
-		textFieldPrixVent.setBounds(242, 46, 106, 20);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldPrixVent);
 		
 		textFieldPrixLocal = new JTextField();
 		textFieldPrixLocal.setColumns(10);
-<<<<<<< HEAD
 		textFieldPrixLocal.setBounds(155, 340, 168, 29);
-=======
-		textFieldPrixLocal.setBounds(358, 46, 106, 20);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(textFieldPrixLocal);
 		
 		textFieldTaille = new JTextField();
 		textFieldTaille.setColumns(10);
-<<<<<<< HEAD
 		textFieldTaille.setBounds(155, 379, 168, 29);
 		frame.getContentPane().add(textFieldTaille);
 		
 		JButton btnRecherche = new JButton("Rechercher");
 		btnRecherche.setFont(new Font("Tahoma", Font.BOLD, 14));
-=======
-		textFieldTaille.setBounds(474, 46, 106, 20);
-		frame.getContentPane().add(textFieldTaille);
-		
-		JButton btnRecherche = new JButton("Rechercher");
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		btnRecherche.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String query = "Select * From biensImmobiliers where ";
@@ -185,46 +151,26 @@ public class Recherche {
 				
 			}
 		});
-<<<<<<< HEAD
 		btnRecherche.setBounds(10, 428, 117, 42);
-=======
-		btnRecherche.setBounds(244, 72, 102, 23);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(btnRecherche);
 		
 		textFieldNumeroBiens = new JTextField();
 		textFieldNumeroBiens.setColumns(10);
-<<<<<<< HEAD
 		textFieldNumeroBiens.setBounds(168, 81, 168, 29);
 		frame.getContentPane().add(textFieldNumeroBiens);
 		
 		lblPour = new JLabel("Pour:");
 		lblPour.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblPour.setBounds(10, 125, 125, 23);
-=======
-		textFieldNumeroBiens.setBounds(126, 138, 106, 20);
-		frame.getContentPane().add(textFieldNumeroBiens);
-		
-		lblPour = new JLabel("          Pour:");
-		lblPour.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblPour.setBounds(10, 166, 106, 23);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(lblPour);
 		
 		textFieldPour = new JTextField();
 		textFieldPour.setColumns(10);
-<<<<<<< HEAD
 		textFieldPour.setBounds(168, 120, 168, 29);
 		frame.getContentPane().add(textFieldPour);
 		
 		JButton btnDemande = new JButton("Demande");
 		btnDemande.setFont(new Font("Tahoma", Font.BOLD, 14));
-=======
-		textFieldPour.setBounds(126, 168, 106, 20);
-		frame.getContentPane().add(textFieldPour);
-		
-		JButton btnDemande = new JButton("Demande");
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		btnDemande.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String ch = textFieldNumeroBiens.getText();
@@ -248,7 +194,6 @@ public class Recherche {
 				}
 			}
 		});
-<<<<<<< HEAD
 		btnDemande.setBounds(10, 159, 125, 42);
 		frame.getContentPane().add(btnDemande);
 		
@@ -284,53 +229,12 @@ public class Recherche {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(377, 81, 467, 389);
-=======
-		btnDemande.setBounds(259, 167, 89, 23);
-		frame.getContentPane().add(btnDemande);
-		
-		lblNumeroBiens = new JLabel("Numero de biens:");
-		lblNumeroBiens.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNumeroBiens.setBounds(10, 136, 106, 23);
-		frame.getContentPane().add(lblNumeroBiens);
-		
-		lblTypeBiens = new JLabel("Type de Biens:");
-		lblTypeBiens.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblTypeBiens.setBounds(10, 23, 106, 23);
-		frame.getContentPane().add(lblTypeBiens);
-		
-		lblLocal = new JLabel("Localisation:");
-		lblLocal.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblLocal.setBounds(126, 23, 106, 23);
-		frame.getContentPane().add(lblLocal);
-		
-		lblPrixVent = new JLabel("Prix de Vent:");
-		lblPrixVent.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblPrixVent.setBounds(242, 23, 106, 23);
-		frame.getContentPane().add(lblPrixVent);
-		
-		lblPrixLocal = new JLabel("Prix de Location:");
-		lblPrixLocal.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblPrixLocal.setBounds(358, 23, 106, 23);
-		frame.getContentPane().add(lblPrixLocal);
-		
-		lblTaille = new JLabel("La taille:");
-		lblTaille.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblTaille.setBounds(474, 23, 106, 23);
-		frame.getContentPane().add(lblTaille);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 205, 571, 126);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		
-<<<<<<< HEAD
 		JButton btnClose = new JButton("Main");
-=======
-		JButton btnClose = new JButton("<--");
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
@@ -341,11 +245,7 @@ public class Recherche {
 		});
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnClose.setBackground(new Color(255, 255, 255));
-<<<<<<< HEAD
 		btnClose.setBounds(10, 10, 89, 50);
-=======
-		btnClose.setBounds(0, 0, 65, 24);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		frame.getContentPane().add(btnClose);
 		
 		String query = "Select * From biensImmobiliers";
@@ -353,7 +253,6 @@ public class Recherche {
 			statement = connection.createStatement();
 			ResultSet res = statement.executeQuery(query);
 			table.setModel(DbUtils.resultSetToTableModel(res));
-<<<<<<< HEAD
 			
 			JSeparator separator = new JSeparator();
 			separator.setBounds(7, 211, 329, 2);
@@ -364,8 +263,6 @@ public class Recherche {
 			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
 			lblNewLabel.setBounds(298, 10, 259, 42);
 			frame.getContentPane().add(lblNewLabel);
-=======
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

@@ -69,7 +69,7 @@ public class affectBiens {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","ELMOKRETAR","nabil");
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -217,28 +217,12 @@ public class affectBiens {
 				frame.dispose();
 			}
 		});
-<<<<<<< HEAD
+
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton.setBounds(10, 10, 66, 39);
 		frame.getContentPane().add(btnNewButton);
-=======
-		btnBiens.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnBiens.setBounds(606, 227, 152, 44);
-		frame.getContentPane().add(btnBiens);
-		
-		JButton btnClose = new JButton("<--");
-		btnClose.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
-				window.setVisible(true);
-				
-				frame.dispose();
-			}
-		});
-		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnClose.setBackground(new Color(255, 255, 255));
-		btnClose.setBounds(0, 0, 65, 24);
-		frame.getContentPane().add(btnClose);
->>>>>>> d81dcefa8481bacb255210bf77913c6dd9caed28
+
+	
+
 	}
 }
