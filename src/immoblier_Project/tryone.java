@@ -30,6 +30,7 @@ public class tryone {
 	private Connection connection;
 	private Statement statement;
 	private JTable tableE;
+	private JTextField textFieldNbrCh;
 	/**
 	 * Launch the application.
 	 */
@@ -146,7 +147,8 @@ public class tryone {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			//connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -327,30 +329,54 @@ public class tryone {
 		btnModifierBien.setForeground(new Color(0, 0, 205));
 		btnModifierBien.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String TNumBiens =txtNumBiens.getText();
+				/*String TNumBiens =txtNumBiens.getText();
 				String TTypeBiens =txtTypeBiens.getText();
 				String Tlocalisation =txtlocalisation.getText();
 				String TPrixVent =txtPrixVent.getText();
 				String TprixLocation =txtprixLocation.getText();
-				String Ttaille =txttaille.getText();
-				
-				String query = " UPDATE biensImmobiliers SET TypeBiens = '"+TTypeBiens+"', localisation='"+Tlocalisation+"',PrixVent='"+TPrixVent+"', prixLocation='"+TprixLocation+"', taille='"+Ttaille+"'   WHERE NumBiens = '"+TNumBiens+"' ";
-						
-				try {
-					statement=connection.createStatement();
-					statement.execute(query);
-					
-					txtNumBiens.setText("");
-					txtTypeBiens.setText("");
-					txtlocalisation.setText("");
-					txtPrixVent.setText("");
-					txtprixLocation.setText("");
-					txttaille.setText("");
-					
-					
-				}catch(Exception e4) {
-					JOptionPane.showMessageDialog(frame, "Error: " + e4.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				String Ttaille =txttaille.getText();*/
+				if(!txtNumBiens.getText().isEmpty()) {
+					String query = "Update biensImmobiliers set ";
+					//String query = "Update Client set ";
+					boolean exist=false;
+					if(!txtTypeBiens.getText().isEmpty()) {query = query + "TypeBiens = '"+txtTypeBiens.getText()+"' ";exist=true;}
+					if(!txtlocalisation.getText().isEmpty()) {
+						if(exist) {query = query + ", localisation = '"+txtlocalisation.getText()+"' ";}
+						else {query = query + "localisation = '"+txtlocalisation.getText()+"' ";exist=true;}}
+					if(!txtPrixVent.getText().isEmpty()) {
+						if(exist) {query = query + ", PrixVent = "+txtPrixVent.getText()+" ";}
+						else {query = query + "PrixVent = '"+txtPrixVent.getText()+"' ";exist=true;}}
+					if(!txtprixLocation.getText().isEmpty()) {
+						if(exist) {query = query + ", prixLocation = "+txtprixLocation.getText()+" ";}
+						else {query = query + "prixLocation = '"+txtprixLocation.getText()+"' ";exist=true;}}
+					if(!txttaille.getText().isEmpty()) {
+						if(exist) {query = query + ", taille = "+txttaille.getText()+" ";}
+						else {query = query + "taille = '"+txttaille.getText()+"' ";exist=true;}}
+					if(!textFieldNbrCh.getText().isEmpty()) {
+						if(exist) {query = query + ", NbrCh = "+textFieldNbrCh.getText()+" ";}
+						else {query = query + "NbrCh = '"+textFieldNbrCh.getText()+"' ";exist=true;}}
+					if(query.contentEquals("Update biensImmobiliers set ")) {
+						JOptionPane.showMessageDialog(btnModifierBien, "Met une modification!");
+						//System.out.println(query);
+						}
+					else {
+						query = query +"Where NumBiens = "+txtNumBiens.getText();
+						System.out.println(query);
+						try {
+							statement = connection.createStatement();
+							statement.executeQuery(query);
+							txtNumBiens.setText("");
+							txtTypeBiens.setText("");
+							txtlocalisation.setText("");
+							txttaille.setText("");
+							textFieldNbrCh.setText("");
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					}
 				}
+				else {JOptionPane.showMessageDialog(btnModifierBien, "Saisir un matricule d'un client!");}
 			}
 		});
 		btnModifierBien.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -377,8 +403,16 @@ public class tryone {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton_1.setBounds(10, 10, 91, 56);
 		frame.getContentPane().add(btnNewButton_1);
-
-
-
+		
+		JLabel lblNbrCh = new JLabel("Nombre de chambre");
+		lblNbrCh.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNbrCh.setBounds(10, 526, 134, 43);
+		frame.getContentPane().add(lblNbrCh);
+		
+		textFieldNbrCh = new JTextField();
+		textFieldNbrCh.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		textFieldNbrCh.setColumns(10);
+		textFieldNbrCh.setBounds(140, 526, 280, 40);
+		frame.getContentPane().add(textFieldNbrCh);
 	}
 }

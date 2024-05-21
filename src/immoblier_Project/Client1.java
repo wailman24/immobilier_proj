@@ -85,7 +85,8 @@ public class Client1 {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			//connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -231,16 +232,16 @@ public class Client1 {
 					boolean exist=false;
 					if(!textFieldNom.getText().isEmpty()) {query = query + "Nom = '"+textFieldNom.getText()+"' ";exist=true;}
 					if(!textFieldPrenom.getText().isEmpty()) {
-						if(exist) {query = query + "and Prenom = '"+textFieldPrenom.getText()+"' ";}
+						if(exist) {query = query + ", Prenom = '"+textFieldPrenom.getText()+"' ";}
 						else {query = query + "Prenom = '"+textFieldPrenom.getText()+"' ";exist=true;}}
 					if(!textFieldNumeroTel.getText().isEmpty()) {
-						if(exist) {query = query + "and numerotel = "+textFieldNumeroTel.getText()+" ";}
+						if(exist) {query = query + ", numerotel = "+textFieldNumeroTel.getText()+" ";}
 						else {query = query + "numerotel = '"+textFieldNumeroTel.getText()+"' ";exist=true;}}
 					if(!textFieldEmail.getText().isEmpty()) {
-						if(exist) {query = query + "and email = "+textFieldEmail.getText()+" ";}
+						if(exist) {query = query + ", email = "+textFieldEmail.getText()+" ";}
 						else {query = query + "email = '"+textFieldEmail.getText()+"' ";exist=true;}}
 					if(!textFieldType.getText().isEmpty()) {
-						if(exist) {query = query + "and typeClt = "+textFieldType.getText();}
+						if(exist) {query = query + ", typeClt = "+textFieldType.getText();}
 						else {query = query + "typeClt = '"+textFieldType.getText()+"' ";exist=true;}}
 					if(query.contentEquals("Update Client set ")) {
 						JOptionPane.showMessageDialog(btnModifier, "Met une modification!");
@@ -327,6 +328,17 @@ public class Client1 {
 		btnAfficher.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnAfficher.setBounds(10, 394, 401, 40);
 		frame.getContentPane().add(btnAfficher);
+		
+		JButton btnHistorique = new JButton("Historique");
+		btnHistorique.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Historique windowH = new Historique(textFieldMat.getText());
+				windowH.setVisible(true);
+			}
+		});
+		btnHistorique.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnHistorique.setBounds(10, 445, 401, 40);
+		frame.getContentPane().add(btnHistorique);
 		
 	}
 	
@@ -477,5 +489,4 @@ public class Client1 {
 		btnNewButton_2.setBounds(0, 0, 61, 25);
 		frame.getContentPane().add(btnNewButton_2);
 	}
-
 }

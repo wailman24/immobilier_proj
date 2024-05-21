@@ -57,7 +57,8 @@ public class AGENCE_IMMOBILIERE {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 			System.out.println("succ");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -249,6 +250,30 @@ public class AGENCE_IMMOBILIERE {
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
+		
+		JButton btnNewButton_1 = new JButton("RendzVous");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RendezVous windowR = new RendezVous();
+				windowR.setVisible(true);
+				
+				frame1.setVisible(false);
+			}
+		});
+		btnNewButton_1.setBounds(225, 90, 150, 36);
+		panel.add(btnNewButton_1);
+		
+		JButton btnNewButton_1_1 = new JButton("Transaction");
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Transaction windowR = new Transaction();
+				windowR.setVisible(true);
+				
+				frame1.setVisible(false);
+			}
+		});
+		btnNewButton_1_1.setBounds(225, 137, 150, 36);
+		panel.add(btnNewButton_1_1);
 		
 		//
 
