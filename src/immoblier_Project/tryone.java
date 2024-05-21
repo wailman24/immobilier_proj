@@ -73,8 +73,9 @@ public class tryone {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 887, 663);
+		frame.setBounds(100, 100, 1010, 663);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
@@ -113,73 +114,73 @@ public class tryone {
 			}
 		});
 		btnajouter.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnajouter.setBounds(550, 239, 221, 43);
+		btnajouter.setBounds(10, 450, 152, 43);
 		frame.getContentPane().add(btnajouter);
 		
 		JLabel lblNewLabel = new JLabel("Numero bien : ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setBounds(68, 130, 134, 43);
+		lblNewLabel.setBounds(10, 96, 134, 43);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblTypeBien = new JLabel("type bien : ");
 		lblTypeBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTypeBien.setBounds(68, 186, 134, 43);
+		lblTypeBien.setBounds(10, 149, 134, 43);
 		frame.getContentPane().add(lblTypeBien);
 		
 		JLabel lblLocalisation = new JLabel("localisation : ");
 		lblLocalisation.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblLocalisation.setBounds(68, 239, 134, 43);
+		lblLocalisation.setBounds(10, 202, 134, 43);
 		frame.getContentPane().add(lblLocalisation);
 		
 		JLabel lblPrixVente = new JLabel("prix vente : ");
 		lblPrixVente.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrixVente.setBounds(68, 291, 134, 43);
+		lblPrixVente.setBounds(10, 255, 134, 43);
 		frame.getContentPane().add(lblPrixVente);
 		
 		JLabel lblPrixLocation = new JLabel("prix location : ");
 		lblPrixLocation.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrixLocation.setBounds(68, 344, 134, 43);
+		lblPrixLocation.setBounds(10, 308, 134, 43);
 		frame.getContentPane().add(lblPrixLocation);
 		
 		JLabel lblTaille = new JLabel("taille : ");
 		lblTaille.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTaille.setBounds(68, 397, 134, 43);
+		lblTaille.setBounds(10, 361, 134, 43);
 		frame.getContentPane().add(lblTaille);
 		
 		txtNumBiens = new JTextField();
 		txtNumBiens.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtNumBiens.setBounds(200, 130, 280, 40);
+		txtNumBiens.setBounds(140, 97, 280, 40);
 		frame.getContentPane().add(txtNumBiens);
 		txtNumBiens.setColumns(10);
 		
 		txtTypeBiens = new JTextField();
 		txtTypeBiens.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtTypeBiens.setColumns(10);
-		txtTypeBiens.setBounds(200, 183, 280, 40);
+		txtTypeBiens.setBounds(140, 149, 280, 40);
 		frame.getContentPane().add(txtTypeBiens);
 		
 		txtlocalisation = new JTextField();
 		txtlocalisation.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtlocalisation.setColumns(10);
-		txtlocalisation.setBounds(200, 239, 280, 40);
+		txtlocalisation.setBounds(140, 203, 280, 40);
 		frame.getContentPane().add(txtlocalisation);
 		
 		txtPrixVent = new JTextField();
 		txtPrixVent.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtPrixVent.setColumns(10);
-		txtPrixVent.setBounds(200, 292, 280, 40);
+		txtPrixVent.setBounds(140, 255, 280, 40);
 		frame.getContentPane().add(txtPrixVent);
 		
 		txtprixLocation = new JTextField();
 		txtprixLocation.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtprixLocation.setColumns(10);
-		txtprixLocation.setBounds(200, 347, 280, 40);
+		txtprixLocation.setBounds(140, 308, 280, 40);
 		frame.getContentPane().add(txtprixLocation);
 		
 		txttaille = new JTextField();
 		txttaille.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txttaille.setColumns(10);
-		txttaille.setBounds(200, 397, 280, 40);
+		txttaille.setBounds(140, 361, 280, 40);
 		frame.getContentPane().add(txttaille);
 		
 		JButton btnNewButton = new JButton("Afficher les biens");
@@ -201,11 +202,11 @@ public class tryone {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnNewButton.setBounds(550, 396, 221, 43);
+		btnNewButton.setBounds(499, 449, 189, 43);
 		frame.getContentPane().add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 450, 853, 158);
+		scrollPane.setBounds(470, 96, 516, 343);
 		frame.getContentPane().add(scrollPane);
 		
 		tableE = new JTable();
@@ -240,7 +241,7 @@ public class tryone {
 			}
 		});
 		btnSupprimerBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnSupprimerBien.setBounds(550, 291, 221, 43);
+		btnSupprimerBien.setBounds(172, 450, 155, 43);
 		frame.getContentPane().add(btnSupprimerBien);
 		
 		JButton btnModifierBien = new JButton("modifier bien");
@@ -274,44 +275,27 @@ public class tryone {
 			}
 		});
 		btnModifierBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnModifierBien.setBounds(550, 343, 221, 43);
+		btnModifierBien.setBounds(337, 450, 152, 43);
 		frame.getContentPane().add(btnModifierBien);
-		
-		JButton btnaffecter = new JButton("affecter des biens");
-		btnaffecter.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-                affectBiens affectWindow = new affectBiens();
-                affectWindow.setVisible(true);
-
-                // Close the current window
-                frame.dispose();
-				
-			}
-		});
-		btnaffecter.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnaffecter.setBounds(550, 116, 221, 43);
-		frame.getContentPane().add(btnaffecter);
 		
 		JLabel lblNewLabel_1 = new JLabel("Gestion des Biens");
 		lblNewLabel_1.setForeground(new Color(0, 0, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 31));
-		lblNewLabel_1.setBounds(246, 30, 594, 76);
+		lblNewLabel_1.setBounds(300, 10, 594, 76);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JButton btnAgents = new JButton("agents");
-		btnAgents.addActionListener(new ActionListener() {
+		JButton btnNewButton_1 = new JButton("Main");
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				agents agentWindow = new agents();
-				agentWindow.setVisible(true);
-
-                // Close the current window
-                frame.dispose();
+				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
+				window.setVisible(true);
+				
+				frame.dispose();
 			}
 		});
-		btnAgents.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnAgents.setBounds(550, 181, 221, 43);
-		frame.getContentPane().add(btnAgents);
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnNewButton_1.setBounds(10, 10, 91, 56);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 }
