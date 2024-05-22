@@ -121,8 +121,8 @@ public class Historique {
 		scrollPane_2.setViewportView(table_2);
 		
 		String query1 = "Select * From Demande where NumClt = "+n;
-		String query2 = "Select * From RDV where NumClt = "+n;
-		String query3 = "Select * From Transaction where NumClt = "+n;
+		String query2 = "SELECT NumRdv,NumAgt,NumClt,NumBien,TO_CHAR(Date_rdv, 'DD-MM-YYYY') AS Date_rdv From RDV where NumClt = "+n;
+		String query3 = "SELECT NumTran,TypeTran,NumClt,NumBiens,montant,TO_CHAR(Date_T, 'DD-MM-YYYY') AS Date_T From Transac where NumClt = "+n;
 		
 		try {
 			statement = connection.createStatement();

@@ -175,7 +175,8 @@ public class tryone {
 				
 				
 				String query = " INSERT INTO biensImmobiliers VALUES ("+TNumBiens+",'"+TTypeBiens+"','"+Tlocalisation+"',"+TPrixVent+","+TprixLocation+","+Ttaille+","+NbrCh+")";
-				
+				String ch = txtTypeBiens.getText();
+				if(ch.contentEquals("villa") || ch.contentEquals("appartement") || ch.contentEquals("logement")) {
 				try {
 					statement=connection.createStatement();
 					statement.execute(query);
@@ -189,7 +190,11 @@ public class tryone {
 					
 					
 				}catch(Exception e1) {
-					JOptionPane.showMessageDialog(frame, "Error: " + e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+					//JOptionPane.showMessageDialog(frame, "Error: " + e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(btnajouter,"Les cases type Bien,localisation,prix vente,prix location et surafce sont obligatoire!");
+				}
+				}else {
+					JOptionPane.showMessageDialog(btnajouter,"La valeur inserée pour le type est non valide!");
 				}
 				
 				

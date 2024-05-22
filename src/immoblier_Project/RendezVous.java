@@ -168,7 +168,8 @@ public class RendezVous {
 
 							} catch (SQLException e1) {
 								// TODO Auto-generated catch block
-								e1.printStackTrace();
+								// e1.printStackTrace();
+								JOptionPane.showMessageDialog(btninserer,"Les cases nom,prenom et typeClient sont obligatoire!");
 							}
 						} else {
 							 //Property does not belong to the agent, show error message

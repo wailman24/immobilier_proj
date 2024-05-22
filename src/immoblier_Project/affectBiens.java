@@ -21,6 +21,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JSlider;
+import javax.swing.ImageIcon;
 
 public class affectBiens {
 
@@ -80,6 +81,7 @@ public class affectBiens {
 		
 		
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 915, 544);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,24 +90,24 @@ public class affectBiens {
 		
 		JLabel lblNewLabel = new JLabel("Numero de l'agent :");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setBounds(10, 149, 195, 39);
+		lblNewLabel.setBounds(10, 198, 195, 39);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNumeroDeBien = new JLabel("Numero de Bien :");
 		lblNumeroDeBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNumeroDeBien.setBounds(10, 210, 195, 39);
+		lblNumeroDeBien.setBounds(10, 259, 195, 39);
 		frame.getContentPane().add(lblNumeroDeBien);
 		
 		txtNumAgt = new JTextField();
 		txtNumAgt.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtNumAgt.setBounds(224, 149, 207, 39);
+		txtNumAgt.setBounds(224, 198, 207, 39);
 		frame.getContentPane().add(txtNumAgt);
 		txtNumAgt.setColumns(10);
 		
 		txtNumBiens = new JTextField();
 		txtNumBiens.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtNumBiens.setColumns(10);
-		txtNumBiens.setBounds(224, 210, 207, 39);
+		txtNumBiens.setBounds(224, 259, 207, 39);
 		frame.getContentPane().add(txtNumBiens);
 		
 		JButton btnajouter = new JButton("ajouter");
@@ -135,7 +137,7 @@ public class affectBiens {
 			}
 		});
 		btnajouter.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnajouter.setBounds(10, 290, 152, 44);
+		btnajouter.setBounds(10, 339, 152, 44);
 		frame.getContentPane().add(btnajouter);
 		
 		JButton btnsupprimer = new JButton("supprimer");
@@ -160,7 +162,7 @@ public class affectBiens {
 			}
 		});
 		btnsupprimer.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnsupprimer.setBounds(172, 290, 152, 44);
+		btnsupprimer.setBounds(172, 339, 152, 44);
 		frame.getContentPane().add(btnsupprimer);
 		
 		JButton btnafficher = new JButton("afficher");
@@ -181,7 +183,7 @@ public class affectBiens {
 			}
 		});
 		btnafficher.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnafficher.setBounds(334, 290, 152, 44);
+		btnafficher.setBounds(334, 339, 152, 44);
 		frame.getContentPane().add(btnafficher);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -194,12 +196,12 @@ public class affectBiens {
 		txtNumaffect = new JTextField();
 		txtNumaffect.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtNumaffect.setColumns(10);
-		txtNumaffect.setBounds(224, 91, 207, 39);
+		txtNumaffect.setBounds(224, 140, 207, 39);
 		frame.getContentPane().add(txtNumaffect);
 		
 		JLabel lblNumeroDeLaffectation = new JLabel("Numero de l'affectation :");
 		lblNumeroDeLaffectation.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNumeroDeLaffectation.setBounds(10, 91, 204, 39);
+		lblNumeroDeLaffectation.setBounds(10, 140, 204, 39);
 		frame.getContentPane().add(lblNumeroDeLaffectation);
 		
 		JLabel lblNewLabel_1 = new JLabel("Affectation de bien");
@@ -209,6 +211,7 @@ public class affectBiens {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("main");
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\home.png"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -220,7 +223,7 @@ public class affectBiens {
 		});
 
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnNewButton.setBounds(10, 10, 66, 39);
+		btnNewButton.setBounds(10, 10, 112, 97);
 		frame.getContentPane().add(btnNewButton);
 
 	

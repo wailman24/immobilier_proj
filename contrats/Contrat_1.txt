@@ -5,35 +5,35 @@
 Numéro de Transaction : 1
 Type Transaction : Vente
 Numéro de Client : 1
-Nom du Client : Dupont
-Prénom du Client : Jean
+Nom du Client : Elmokretar
+Prénom du Client : Nabil
 Numéro de Biens : 1
 Date de Transaction : 22-05-2024
-Montant de la Transaction : 8762345
+Montant de la Transaction : 872634
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Informations sur la transaction :
 
 	 Le bien numéro 1 a été mis en Vente,
-	Pour le client numéro 1 definie par son nom Dupont, et son prénom Jean,
-	le 22-05-2024 pour un montant de 8762345 DA. 
+	Pour le client numéro 1 definie par son nom Elmokretar, et son prénom Nabil,
+	le 22-05-2024 pour un montant de 872634 DA. 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Conformité sur le contrat :
 
-	 Ce contrat certifie que le client Dupont Jean a effectué une transaction de Vente,
-   	concernant la/le M, sous le numéro 1. Le montant de la transaction a été dûment enregistré,
+	 Ce contrat certifie que le client Elmokretar Nabil a effectué une transaction de Vente,
+   	concernant la/le villa, sous le numéro 1. Le montant de la transaction a été dûment enregistré,
    	et accepté par toutes les parties concernées.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Information sur le biens concerné:
 
-	 Le/La M se situe à l'adresse Paris,
-	avec une surface de 300000 m2,
-	pour un total de 1000 chambres.
+	 Le/La villa se situe à l'adresse Paris,
+	avec une surface de 345234 m2,
+	pour un total de 2345 chambres.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

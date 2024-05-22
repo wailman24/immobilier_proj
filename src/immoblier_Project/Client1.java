@@ -203,19 +203,24 @@ public class Client1 {
 				nbrClt++;
 				String query = "Insert into Client values (" + nbrClt + ",'" + textFieldNom.getText() + "','" + textFieldPrenom.getText()
 						+ "','" + textFieldNumeroTel.getText() + "','" + textFieldEmail.getText() + "','" + textFieldType.getText() + "')";
-				textFieldNom.setText("");
-				textFieldPrenom.setText("");
-				textFieldNumeroTel.setText("");
-				textFieldEmail.setText("");
-				textFieldType.setText("");
-				System.out.println(query);
-				try {
-					statement = connection.createStatement();
-					statement.execute(query);
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				String ch = textFieldType.getText();
+				if(ch.contentEquals("acheteur") || ch.contentEquals("locataire") || ch.contentEquals("vendeur") || ch.contentEquals("bailleur")) {
+					textFieldNom.setText("");
+					textFieldPrenom.setText("");
+					textFieldNumeroTel.setText("");
+					textFieldEmail.setText("");
+					textFieldType.setText("");
+					System.out.println(query);
+					try {
+						statement = connection.createStatement();
+						statement.execute(query);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(btnAjouter,"Les cases nom,prenom et typeClient sont obligatoire!");
+						e1.printStackTrace();
+					}
+				}else {JOptionPane.showMessageDialog(btnAjouter,"La valeur inserée pour le type est non valide!");}
+				
 
 			}
 		});
@@ -354,12 +359,13 @@ public class Client1 {
 		}
 
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(0, 128, 128));
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setForeground(new Color(0, 0, 0));
-		frame.setBounds(150, 150, 605, 450);
+		frame.setBounds(150, 150, 670, 562);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
 		
 		String ch = "Select count(*) From Client";
 		try {
@@ -377,75 +383,76 @@ public class Client1 {
 		//p.setForeground(new Color(0, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel("La gestion des clients");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(170, 11, 199, 32);
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setForeground(Color.BLUE);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 24));
+		lblNewLabel.setBounds(170, 11, 298, 58);
 		frame.getContentPane().add(lblNewLabel);
 
 		lblMat = new JLabel("Matriculede client:");
-		lblMat.setForeground(new Color(255, 255, 255));
-		lblMat.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMat.setBounds(0, 69, 111, 32);
+		lblMat.setForeground(Color.BLACK);
+		lblMat.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblMat.setBounds(61, 137, 190, 32);
 		frame.getContentPane().add(lblMat);
 
 		lblNom = new JLabel("Nom de client:");
-		lblNom.setForeground(new Color(255, 255, 255));
-		lblNom.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNom.setBounds(0, 106, 111, 32);
+		lblNom.setForeground(Color.BLACK);
+		lblNom.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblNom.setBounds(61, 174, 196, 32);
 		frame.getContentPane().add(lblNom);
 
 		lblPrenom = new JLabel("Prenom de client:");
-		lblPrenom.setForeground(new Color(255, 255, 255));
-		lblPrenom.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblPrenom.setBounds(0, 145, 111, 32);
+		lblPrenom.setForeground(Color.BLACK);
+		lblPrenom.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblPrenom.setBounds(61, 213, 190, 32);
 		frame.getContentPane().add(lblPrenom);
 
 		lblNumeroTel = new JLabel("Numero de telephone:");
-		lblNumeroTel.setForeground(new Color(255, 255, 255));
-		lblNumeroTel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNumeroTel.setBounds(0, 186, 137, 32);
+		lblNumeroTel.setForeground(Color.BLACK);
+		lblNumeroTel.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblNumeroTel.setBounds(61, 254, 196, 32);
 		frame.getContentPane().add(lblNumeroTel);
 
 		lblEmail = new JLabel("Email:");
-		lblEmail.setForeground(new Color(255, 255, 255));
-		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEmail.setBounds(0, 226, 111, 32);
+		lblEmail.setForeground(Color.BLACK);
+		lblEmail.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblEmail.setBounds(61, 294, 151, 32);
 		frame.getContentPane().add(lblEmail);
 
 		lblType = new JLabel("Type de client:");
-		lblType.setForeground(new Color(255, 255, 255));
-		lblType.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblType.setBounds(0, 264, 111, 32);
+		lblType.setForeground(Color.BLACK);
+		lblType.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblType.setBounds(61, 332, 173, 32);
 		frame.getContentPane().add(lblType);
 
 		textFieldMat = new JTextField();
-		textFieldMat.setBounds(141, 77, 111, 24);
+		textFieldMat.setBounds(250, 141, 196, 32);
 		frame.getContentPane().add(textFieldMat);
 		textFieldMat.setColumns(10);
 
 		textFieldNom = new JTextField();
 		textFieldNom.setColumns(10);
-		textFieldNom.setBounds(141, 114, 111, 24);
+		textFieldNom.setBounds(250, 178, 196, 32);
 		frame.getContentPane().add(textFieldNom);
 
 		textFieldPrenom = new JTextField();
 		textFieldPrenom.setColumns(10);
-		textFieldPrenom.setBounds(141, 153, 111, 24);
+		textFieldPrenom.setBounds(250, 217, 196, 32);
 		frame.getContentPane().add(textFieldPrenom);
 
 		textFieldNumeroTel = new JTextField();
 		textFieldNumeroTel.setColumns(10);
-		textFieldNumeroTel.setBounds(141, 194, 111, 24);
+		textFieldNumeroTel.setBounds(250, 255, 196, 32);
 		frame.getContentPane().add(textFieldNumeroTel);
 
 		textFieldEmail = new JTextField();
 		textFieldEmail.setColumns(10);
-		textFieldEmail.setBounds(141, 234, 111, 24);
+		textFieldEmail.setBounds(250, 294, 196, 32);
 		frame.getContentPane().add(textFieldEmail);
 
 		textFieldType = new JTextField();
 		textFieldType.setColumns(10);
-		textFieldType.setBounds(141, 272, 111, 24);
+		textFieldType.setBounds(250, 332, 196, 32);
 		frame.getContentPane().add(textFieldType);
 		
 
@@ -472,10 +479,11 @@ public class Client1 {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(405, 74, 145, 40);
+		btnNewButton_1.setBounds(301, 396, 145, 40);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("<--");
+		//btnNewButton_2.setIcon(new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\home.png"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
@@ -486,7 +494,7 @@ public class Client1 {
 		});
 		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnNewButton_2.setBackground(new Color(255, 255, 255));
-		btnNewButton_2.setBounds(0, 0, 61, 25);
+		btnNewButton_2.setBounds(10, 13, 150, 99);
 		frame.getContentPane().add(btnNewButton_2);
 	}
 }

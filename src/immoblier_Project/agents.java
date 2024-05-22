@@ -15,6 +15,7 @@ import java.sql.*;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 public class agents {
 
@@ -71,6 +72,7 @@ public class agents {
 		
 		
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 796, 585);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,35 +81,35 @@ public class agents {
 		
 		JLabel lblNewLabel = new JLabel("Num agent : ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setBounds(8, 121, 138, 30);
+		lblNewLabel.setBounds(10, 178, 138, 30);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNomAgent = new JLabel("Nom agent : ");
 		lblNomAgent.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNomAgent.setBounds(8, 180, 138, 30);
+		lblNomAgent.setBounds(10, 237, 138, 30);
 		frame.getContentPane().add(lblNomAgent);
 		
 		JLabel lblPrenomAgent = new JLabel("Prenom agent : ");
 		lblPrenomAgent.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrenomAgent.setBounds(8, 239, 138, 30);
+		lblPrenomAgent.setBounds(10, 296, 138, 30);
 		frame.getContentPane().add(lblPrenomAgent);
 		
 		txtNumAgt = new JTextField();
 		txtNumAgt.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtNumAgt.setBounds(172, 120, 226, 38);
+		txtNumAgt.setBounds(174, 177, 226, 38);
 		frame.getContentPane().add(txtNumAgt);
 		txtNumAgt.setColumns(10);
 		
 		txtNom = new JTextField();
 		txtNom.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtNom.setColumns(10);
-		txtNom.setBounds(172, 179, 226, 38);
+		txtNom.setBounds(174, 236, 226, 38);
 		frame.getContentPane().add(txtNom);
 		
 		txtPrenom = new JTextField();
 		txtPrenom.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtPrenom.setColumns(10);
-		txtPrenom.setBounds(172, 238, 226, 38);
+		txtPrenom.setBounds(174, 295, 226, 38);
 		frame.getContentPane().add(txtPrenom);
 		
 		JButton btnajouteragt = new JButton("ajouter");
@@ -135,7 +137,7 @@ public class agents {
 			}
 		});
 		btnajouteragt.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnajouteragt.setBounds(10, 292, 124, 37);
+		btnajouteragt.setBounds(12, 349, 124, 37);
 		frame.getContentPane().add(btnajouteragt);
 		
 		JButton btnSupprimeragt = new JButton("supprimer");
@@ -158,7 +160,7 @@ public class agents {
 			}
 		});
 		btnSupprimeragt.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnSupprimeragt.setBounds(144, 292, 124, 37);
+		btnSupprimeragt.setBounds(146, 349, 124, 37);
 		frame.getContentPane().add(btnSupprimeragt);
 		
 		JButton btnAfficheragt = new JButton("afficher");
@@ -179,11 +181,11 @@ public class agents {
 			}
 		});
 		btnAfficheragt.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnAfficheragt.setBounds(278, 292, 124, 37);
+		btnAfficheragt.setBounds(280, 349, 124, 37);
 		frame.getContentPane().add(btnAfficheragt);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(423, 96, 339, 442);
+		scrollPane.setBounds(423, 96, 349, 442);
 		frame.getContentPane().add(scrollPane);
 		
 		tableagt = new JTable();
@@ -214,6 +216,7 @@ public class agents {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("main");
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\home.png"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -224,7 +227,7 @@ public class agents {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnNewButton.setBounds(10, 10, 65, 49);
+		btnNewButton.setBounds(10, 10, 124, 101);
 		frame.getContentPane().add(btnNewButton);
 	}
 

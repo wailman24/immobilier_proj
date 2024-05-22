@@ -11,7 +11,7 @@ import java.sql.*;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
+import java.awt.Image;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.JLabel;
@@ -20,6 +20,7 @@ import javax.swing.JTable;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.ImageIcon;
 //import javax.swing.JScrollPane;
 
 public class AGENCE_IMMOBILIERE {
@@ -69,19 +70,29 @@ public class AGENCE_IMMOBILIERE {
 		frame1.setResizable(false);
 		frame1.getContentPane().setBackground(new Color(255, 255, 255));
 		frame1.getContentPane().setForeground(new Color(0, 0, 0));
-		frame1.setBounds(100, 100, 605, 450);
+		frame1.setBounds(100, 100, 768, 535);
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame1.getContentPane().setLayout(null);
 		frame1.setLocationRelativeTo(null);
 		
-		panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		panel.setBounds(0, 0, 589, 411);
-		frame1.getContentPane().add(panel);
-		panel.setLayout(null);
+		 panel = new JPanel() {
+	            @Override
+	            protected void paintComponent(java.awt.Graphics g) {
+	                super.paintComponent(g);
+	                ImageIcon icon = new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\11567.jpg"); // Replace with your image path
+	                Image image = icon.getImage();
+	                int width = panel.getWidth();
+	                int height = panel.getHeight();
+	                g.drawImage(image, 0, 0, width, height, this);
+	            }
+	        };
+	        panel.setBackground(Color.WHITE);
+	        panel.setBounds(0, 0, 754, 498);
+	        frame1.getContentPane().add(panel);
+	        panel.setLayout(null);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 637, 22);
+		menuBar.setBounds(0, 0, 754, 38);
 		panel.add(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("Biens");
@@ -202,6 +213,18 @@ public class AGENCE_IMMOBILIERE {
 		});
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
+		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Transaction");
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Transaction windowR = new Transaction();
+				windowR.setVisible(true);
+				
+				frame1.setVisible(false);
+				
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_6);
+		
 		JMenu mnNewMenu_2 = new JMenu("clients");
 		menuBar.add(mnNewMenu_2);
 		
@@ -225,6 +248,18 @@ public class AGENCE_IMMOBILIERE {
 			}
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Rendez-Vous");
+		mntmNewMenuItem_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RendezVous windowR = new RendezVous();
+				windowR.setVisible(true);
+				
+				frame1.setVisible(false);
+				
+			}
+		});
+		mnNewMenu_2.add(mntmNewMenuItem_5);
 		
 		JMenu mnNewMenu_1 = new JMenu("agents");
 		menuBar.add(mnNewMenu_1);
@@ -250,31 +285,6 @@ public class AGENCE_IMMOBILIERE {
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
-		
-		JButton btnNewButton_1 = new JButton("RendzVous");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				RendezVous windowR = new RendezVous();
-				windowR.setVisible(true);
-				
-				frame1.setVisible(false);
-			}
-		});
-		btnNewButton_1.setBounds(225, 90, 150, 36);
-		panel.add(btnNewButton_1);
-		//btnNewButton_1.setVisible(false);
-		
-		JButton btnNewButton_1_1 = new JButton("Transaction");
-		btnNewButton_1_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Transaction windowR = new Transaction();
-				windowR.setVisible(true);
-				
-				frame1.setVisible(false);
-			}
-		});
-		btnNewButton_1_1.setBounds(225, 137, 150, 36);
-		panel.add(btnNewButton_1_1);
 		//btnNewButton_1_1.setVisible(false);
 		
 		//

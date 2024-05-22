@@ -29,6 +29,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.LineBorder;
 
 import net.proteanit.sql.DbUtils;
+import javax.swing.ImageIcon;
 
 public class Transaction {
 
@@ -80,7 +81,7 @@ public class Transaction {
 
             // Establish connection
             connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
-
+            //connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
             // Connection established successfully
             System.out.println("Connection established successfully!");
         } catch (ClassNotFoundException e) {
@@ -92,18 +93,20 @@ public class Transaction {
         }
 
         frame = new JFrame();
+        frame.setResizable(false);
         frame.getContentPane().setForeground(new Color(0, 0, 0));
-        frame.getContentPane().setBackground(new Color(64, 128, 128));
-        frame.setBounds(100, 100, 1363, 791);
+        frame.getContentPane().setBackground(Color.WHITE);
+        frame.setBounds(100, 100, 986, 661);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
-
-        JLabel lblNewLabel = new JLabel("Ajouter une transaction :");
-        lblNewLabel.setBackground(new Color(64, 128, 128));
+        frame.setLocationRelativeTo(null);
+        
+        JLabel lblNewLabel = new JLabel("Transactions");
+        lblNewLabel.setBackground(Color.WHITE);
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setBounds(10, 57, 415, 54);
-        lblNewLabel.setForeground(new Color(255, 255, 255));
-        lblNewLabel.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        lblNewLabel.setBounds(284, 10, 415, 54);
+        lblNewLabel.setForeground(Color.BLUE);
+        lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
         frame.getContentPane().add(lblNewLabel);
 
         NumTran = new JTextField();
@@ -112,46 +115,46 @@ public class Transaction {
         NumTran.setColumns(10);
 
         JLabel lblNewLabel_1 = new JLabel("Numéro Transaction :");
-        lblNewLabel_1.setForeground(new Color(255, 255, 255));
+        lblNewLabel_1.setForeground(Color.BLACK);
         lblNewLabel_1.setBounds(25, 159, 189, 36);
-        lblNewLabel_1.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+        lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 16));
         frame.getContentPane().add(lblNewLabel_1);
 
         JLabel lblNewLabel_1_1 = new JLabel("Numéro Client :");
-        lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
-        lblNewLabel_1_1.setBounds(25, 324, 189, 33);
-        lblNewLabel_1_1.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+        lblNewLabel_1_1.setForeground(Color.BLACK);
+        lblNewLabel_1_1.setBounds(25, 251, 189, 33);
+        lblNewLabel_1_1.setFont(new Font("Dialog", Font.BOLD, 16));
         frame.getContentPane().add(lblNewLabel_1_1);
 
         NumClt = new JTextField();
-        NumClt.setBounds(224, 324, 189, 36);
+        NumClt.setBounds(224, 253, 189, 36);
         NumClt.setColumns(10);
         frame.getContentPane().add(NumClt);
 
         JLabel lblNewLabel_1_2 = new JLabel("Numéro Biens :");
-        lblNewLabel_1_2.setForeground(new Color(255, 255, 255));
-        lblNewLabel_1_2.setBounds(25, 402, 189, 36);
-        lblNewLabel_1_2.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+        lblNewLabel_1_2.setForeground(Color.BLACK);
+        lblNewLabel_1_2.setBounds(25, 294, 189, 36);
+        lblNewLabel_1_2.setFont(new Font("Dialog", Font.BOLD, 16));
         frame.getContentPane().add(lblNewLabel_1_2);
 
         NumBiens = new JTextField();
-        NumBiens.setBounds(224, 402, 189, 36);
+        NumBiens.setBounds(224, 299, 189, 36);
         NumBiens.setColumns(10);
         frame.getContentPane().add(NumBiens);
 
         JLabel lblNewLabel_1_4 = new JLabel("montant Transaction :");
-        lblNewLabel_1_4.setForeground(new Color(255, 255, 255));
-        lblNewLabel_1_4.setBounds(25, 568, 189, 33);
-        lblNewLabel_1_4.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+        lblNewLabel_1_4.setForeground(Color.BLACK);
+        lblNewLabel_1_4.setBounds(25, 340, 189, 33);
+        lblNewLabel_1_4.setFont(new Font("Dialog", Font.BOLD, 16));
         frame.getContentPane().add(lblNewLabel_1_4);
 
         montant = new JTextField();
-        montant.setBounds(224, 565, 189, 36);
+        montant.setBounds(224, 345, 189, 36);
         montant.setColumns(10);
         frame.getContentPane().add(montant);
 
-        JButton btnaddtran = new JButton("Confirmation");
-        btnaddtran.setBounds(208, 646, 217, 45);
+        JButton btnaddtran = new JButton("Ajouter");
+        btnaddtran.setBounds(25, 444, 151, 45);
         btnaddtran.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int Tran = Integer.parseInt(NumTran.getText());
@@ -266,10 +269,10 @@ public class Transaction {
 
         btnaddtran.setBackground(new Color(255, 255, 255));
         btnaddtran.setForeground(new Color(0, 0, 0));
-        btnaddtran.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btnaddtran.setFont(new Font("Tahoma", Font.BOLD, 16));
         frame.getContentPane().add(btnaddtran);
 
-        JButton btndisplay = new JButton("Liste des transactions");
+        JButton btndisplay = new JButton("Afficher");
         btndisplay.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -286,12 +289,13 @@ public class Transaction {
                 }
             }
         });
-        btndisplay.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btndisplay.setFont(new Font("Tahoma", Font.BOLD, 16));
         btndisplay.setBackground(new Color(255, 255, 255));
-        btndisplay.setBounds(473, 80, 222, 45);
+        btndisplay.setBounds(211, 444, 151, 45);
         frame.getContentPane().add(btndisplay);
         
         JButton btnClose = new JButton("main");
+        btnClose.setIcon(new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\home.png"));
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
@@ -302,12 +306,12 @@ public class Transaction {
 		});
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnClose.setBackground(new Color(255, 255, 255));
-		btnClose.setBounds(10, 6, 63, 20);
+		btnClose.setBounds(10, 6, 139, 107);
 		frame.getContentPane().add(btnClose);
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportBorder(new LineBorder(new Color(0, 0, 0)));
-        scrollPane.setBounds(473, 159, 809, 428);
+        scrollPane.setBounds(436, 143, 526, 458);
         frame.getContentPane().add(scrollPane);
 
         tabletran = new JTable();
@@ -315,13 +319,13 @@ public class Transaction {
         
         TypeTran = new JTextField();
         TypeTran.setColumns(10);
-        TypeTran.setBounds(224, 241, 189, 36);
+        TypeTran.setBounds(224, 205, 189, 36);
         frame.getContentPane().add(TypeTran);
         
         JLabel lblNewLabel_1_4_1 = new JLabel("Type Transaction :");
-        lblNewLabel_1_4_1.setForeground(Color.WHITE);
-        lblNewLabel_1_4_1.setFont(new Font("Times New Roman", Font.ITALIC, 20));
-        lblNewLabel_1_4_1.setBounds(25, 241, 189, 36);
+        lblNewLabel_1_4_1.setForeground(Color.BLACK);
+        lblNewLabel_1_4_1.setFont(new Font("Dialog", Font.BOLD, 16));
+        lblNewLabel_1_4_1.setBounds(25, 205, 189, 36);
         frame.getContentPane().add(lblNewLabel_1_4_1);
     }
 
