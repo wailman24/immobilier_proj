@@ -95,7 +95,7 @@ public class Client1 {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 965, 570);
+		frame.setBounds(100, 100, 1010, 570);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
@@ -163,33 +163,33 @@ public class Client1 {
 		frame.getContentPane().add(lblType);
 
 		textFieldMat = new JTextField();
-		textFieldMat.setBounds(219, 69, 218, 31);
+		textFieldMat.setBounds(219, 69, 192, 31);
 		frame.getContentPane().add(textFieldMat);
 		textFieldMat.setColumns(10);
 
 		textFieldNom = new JTextField();
 		textFieldNom.setColumns(10);
-		textFieldNom.setBounds(219, 104, 218, 31);
+		textFieldNom.setBounds(219, 104, 193, 31);
 		frame.getContentPane().add(textFieldNom);
 
 		textFieldPrenom = new JTextField();
 		textFieldPrenom.setColumns(10);
-		textFieldPrenom.setBounds(219, 141, 218, 33);
+		textFieldPrenom.setBounds(219, 141, 193, 33);
 		frame.getContentPane().add(textFieldPrenom);
 
 		textFieldNumeroTel = new JTextField();
 		textFieldNumeroTel.setColumns(10);
-		textFieldNumeroTel.setBounds(219, 181, 218, 31);
+		textFieldNumeroTel.setBounds(219, 181, 193, 31);
 		frame.getContentPane().add(textFieldNumeroTel);
 		
 		textFieldEmail = new JTextField();
 		textFieldEmail.setColumns(10);
-		textFieldEmail.setBounds(219, 222, 218, 32);
+		textFieldEmail.setBounds(219, 222, 193, 32);
 		frame.getContentPane().add(textFieldEmail);
 		
 		textFieldType = new JTextField();
 		textFieldType.setColumns(10);
-		textFieldType.setBounds(219, 264, 218, 32);
+		textFieldType.setBounds(219, 264, 193, 32);
 		frame.getContentPane().add(textFieldType);
 
 
@@ -267,7 +267,7 @@ public class Client1 {
 		frame.getContentPane().add(btnModifier);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(487, 69, 452, 454);
+		scrollPane.setBounds(433, 69, 551, 454);
 		frame.getContentPane().add(scrollPane);
 
 		JTable table = new JTable();

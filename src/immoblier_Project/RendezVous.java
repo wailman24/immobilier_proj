@@ -76,7 +76,7 @@ public class RendezVous {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "MERAD", "ADEL");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -134,24 +134,25 @@ public class RendezVous {
 				LocalDate userDate;
 				try {
 					userDate = LocalDate.parse(Date, inputFormatter);
-				} catch (DateTimeParseException e2) {
-					JOptionPane.showMessageDialog(btninserer,
-							"Invalide date format. Enter la date on format de (dd-mm-yyyy) format.");
+					System.out.println(userDate);				
+					} catch (DateTimeParseException e2) {
+					JOptionPane.showMessageDialog(btninserer,"Invalide date format. Enter la date on format de (dd-mm-yyyy) format.");
 					return;
 				}
 
 				if (today.isEqual(userDate) || (today.isBefore(userDate))) {
 
-					String checkQuery = "SELECT * FROM AgentBiens WHERE NumAgt = '" + agt + "' AND NumBiens = '" + Bien
-							+ "'";
+					String checkQuery = "SELECT * FROM AgentBiens WHERE NumAgt = " + agt + " AND NumBiens = " + Bien;
 					try {
 						Statement checkStatement = connection.createStatement();
 						ResultSet resultSet = checkStatement.executeQuery(checkQuery);
 
 						if (resultSet.next()) {
 
-							String query = "INSERT INTO RDV VALUES ('" + rdv + "' , '" + agt + "' , '" + clt + "',"
-									+ Bien + ",'" + Date + "')";
+							String query = "INSERT INTO RDV VALUES ('" + rdv + "' , '" + agt + "' , '" + clt + "',"+ Bien + ", TO_DATE('"+Date+"','DD-MM-YYYY'))";
+							System.out.println(query);
+							
+							//String query = "INSERT INTO RDV (NumRdv,NumAgt,NumClt,Date_rdv) VALUES (" + rdv + " , " + agt + " , " + clt + ",'"+Date+"')";
 
 							try {
 								statement = connection.createStatement();
@@ -170,9 +171,8 @@ public class RendezVous {
 								e1.printStackTrace();
 							}
 						} else {
-							// Property does not belong to the agent, show error message
-							JOptionPane.showMessageDialog(btninserer,
-									"Le bien selectionné n'appartient pas à l'agent!");
+							 //Property does not belong to the agent, show error message
+							JOptionPane.showMessageDialog(btninserer,"Le bien selectionné n'appartient pas à l'agent!");
 						}
 					} catch (SQLException e1) {
 						// Handle error during check query execution
@@ -203,7 +203,7 @@ public class RendezVous {
 		btnafficher.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				String query = "SELECT * FROM RDV";
+				String query = "SELECT NumRdv,NumAgt,NumClt,NumBien,TO_CHAR(Date_rdv, 'DD-MM-YYYY') AS Date_rdv FROM RDV";
 
 				try {
 					statement = connection.createStatement();

@@ -36,7 +36,6 @@ public class Transaction {
     private JTextField NumTran;
     private JTextField NumClt;
     private JTextField NumBiens;
-    private JTextField Date_T;
     private JTextField montant;
     private Connection connection;
     private Statement statement;
@@ -80,7 +79,7 @@ public class Transaction {
             Class.forName("oracle.jdbc.driver.OracleDriver");
 
             // Establish connection
-            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ProjetPoo", "oculus");
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 
             // Connection established successfully
             System.out.println("Connection established successfully!");
@@ -140,17 +139,6 @@ public class Transaction {
         NumBiens.setColumns(10);
         frame.getContentPane().add(NumBiens);
 
-        JLabel lblNewLabel_1_3 = new JLabel("Date Transaction :");
-        lblNewLabel_1_3.setForeground(new Color(255, 255, 255));
-        lblNewLabel_1_3.setBounds(25, 486, 189, 33);
-        lblNewLabel_1_3.setFont(new Font("Times New Roman", Font.ITALIC, 20));
-        frame.getContentPane().add(lblNewLabel_1_3);
-
-        Date_T = new JTextField();
-        Date_T.setBounds(224, 483, 189, 36);
-        Date_T.setColumns(10);
-        frame.getContentPane().add(Date_T);
-
         JLabel lblNewLabel_1_4 = new JLabel("montant Transaction :");
         lblNewLabel_1_4.setForeground(new Color(255, 255, 255));
         lblNewLabel_1_4.setBounds(25, 568, 189, 33);
@@ -169,25 +157,25 @@ public class Transaction {
                 int Tran = Integer.parseInt(NumTran.getText());
                 int Clt = Integer.parseInt(NumClt.getText());
                 int Biens = Integer.parseInt(NumBiens.getText());
-                String DateStr = Date_T.getText(); // Chaîne de date
+               // String DateStr = Date_T.getText(); // Chaîne de date
                 String type = TypeTran.getText();
 
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy"); // Format de date attendu
-                Date date = null;
+                //SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy"); // Format de date attendu
+                //Date date = null;
 
-                try {
+                /*try {
                     date = dateFormat.parse(DateStr); // Convertir la chaîne de date en objet Date
                 } catch (ParseException ex) {
                     ex.printStackTrace(); // Gérer les erreurs de conversion
-                }
+                }*/
 
                 int mont = Integer.parseInt(montant.getText());
-                String formattedDate = dateFormat.format(date);
+                //String formattedDate = dateFormat.format(date);
 
-                System.out.println(Tran + "-" + type + "-" + Clt + "-" + Biens + "-" + formattedDate + "-" + mont);
+                //System.out.println(Tran + "-" + type + "-" + Clt + "-" + Biens + "-" + formattedDate + "-" + mont);
 
-                String query = "INSERT INTO Transac values(" + Tran + ",'" + type + "'," + Clt + "," + Biens + ",'" + formattedDate + "'," + mont + ")";
+                String query = "INSERT INTO Transac values(" + Tran + ",'" + type + "'," + Clt + "," + Biens + ",SYSDATE," + mont + ")";
                 String query1 = "select nom , prenom from Client where numClt ="+ Clt +""; 
                 String query2 = "select * from biensImmobiliers where NumBiens ="+ Biens +""; 
                 
@@ -195,13 +183,14 @@ public class Transaction {
                 
                 try {
                     statement = connection.createStatement();
-
+                    System.out.println(query);
                     statement.executeUpdate(query);
+                    System.out.println(query1);
                     ResultSet res = statement.executeQuery(query1);
                     res.next();
                     String nom =res.getString(1);
                     String prenom = res.getString(2);
-                    
+                    System.out.println(query2);
                     ResultSet res1 = statement.executeQuery(query2);
                     res1.next();
                     String typebiens = res1.getString(2);
@@ -213,8 +202,13 @@ public class Transaction {
                     TypeTran.setText("");
                     NumClt.setText("");
                     NumBiens.setText("");
-                    Date_T.setText("");
+                   // Date_T.setText("");
                     montant.setText("");
+                    
+                    String date = "Select TO_CHAR(Date_T, 'DD-MM-YYYY') AS Date_T From Transac";
+                    res = statement.executeQuery(date);
+                    res.next();
+                    date = res.getString(1);
 
                     // Générer le fichier de contrat
                     String contenuContrat = 
@@ -227,13 +221,13 @@ public class Transaction {
                             "Nom du Client : " + nom + "\n" +
                             "Prénom du Client : " + prenom + "\n" +
                             "Numéro de Biens : " + Biens + "\n" +
-                            "Date de Transaction : " + formattedDate + "\n" +
+                            "Date de Transaction : " + date + "\n" +
                             "Montant de la Transaction : " + mont + "\n\n" +
                             "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n" +
                             "Informations sur la transaction :\n\n"+
                             "	 Le bien numéro "+Biens+" a été mis en "+type+",\n"+
                             "	Pour le client numéro "+Clt+" definie par son nom "+nom+", et son prénom "+prenom+",\n"+
-                            "	le "+formattedDate+" pour un montant de "+mont+" DA. \n\n" +
+                            "	le "+date+" pour un montant de "+mont+" DA. \n\n" +
 
                             "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n" +
 
@@ -279,7 +273,7 @@ public class Transaction {
         btndisplay.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                String query = "SELECT * FROM Transac";
+                String query = "SELECT NumTran,TypeTran,NumClt,NumBiens,montant,TO_CHAR(Date_T, 'DD-MM-YYYY') AS Date_T FROM Transac";
 
                 try {
                     statement = connection.createStatement();

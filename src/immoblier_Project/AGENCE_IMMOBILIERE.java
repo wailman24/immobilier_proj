@@ -262,6 +262,7 @@ public class AGENCE_IMMOBILIERE {
 		});
 		btnNewButton_1.setBounds(225, 90, 150, 36);
 		panel.add(btnNewButton_1);
+		//btnNewButton_1.setVisible(false);
 		
 		JButton btnNewButton_1_1 = new JButton("Transaction");
 		btnNewButton_1_1.addActionListener(new ActionListener() {
@@ -274,6 +275,7 @@ public class AGENCE_IMMOBILIERE {
 		});
 		btnNewButton_1_1.setBounds(225, 137, 150, 36);
 		panel.add(btnNewButton_1_1);
+		//btnNewButton_1_1.setVisible(false);
 		
 		//
 

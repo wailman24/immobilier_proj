@@ -156,7 +156,7 @@ public class tryone {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 1010, 663);
+		frame.setBounds(100, 100, 1020, 663);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
@@ -171,9 +171,10 @@ public class tryone {
 				String TPrixVent =txtPrixVent.getText();
 				String TprixLocation =txtprixLocation.getText();
 				String Ttaille =txttaille.getText();
+				String NbrCh = textFieldNbrCh.getText();
 				
 				
-				String query = " INSERT INTO biensImmobiliers VALUES ('"+TNumBiens+"','"+TTypeBiens+"','"+Tlocalisation+"','"+TPrixVent+"','"+TprixLocation+"','"+Ttaille + "')";
+				String query = " INSERT INTO biensImmobiliers VALUES ("+TNumBiens+",'"+TTypeBiens+"','"+Tlocalisation+"',"+TPrixVent+","+TprixLocation+","+Ttaille+","+NbrCh+")";
 				
 				try {
 					statement=connection.createStatement();
@@ -287,7 +288,7 @@ public class tryone {
 		frame.getContentPane().add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(470, 96, 516, 343);
+		scrollPane.setBounds(470, 96, 526, 343);
 		frame.getContentPane().add(scrollPane);
 		
 		tableE = new JTable();
