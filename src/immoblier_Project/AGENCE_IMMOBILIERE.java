@@ -58,8 +58,8 @@ public class AGENCE_IMMOBILIERE {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 			System.out.println("succ");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -79,7 +79,7 @@ public class AGENCE_IMMOBILIERE {
 	            @Override
 	            protected void paintComponent(java.awt.Graphics g) {
 	                super.paintComponent(g);
-	                ImageIcon icon = new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\11567.jpg"); // Replace with your image path
+	                ImageIcon icon = new ImageIcon("homepoo.jpg"); // Replace with your image path
 	                Image image = icon.getImage();
 	                int width = panel.getWidth();
 	                int height = panel.getHeight();

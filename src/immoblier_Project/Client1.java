@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import net.proteanit.sql.DbUtils;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class Client1 {
 
@@ -85,8 +86,8 @@ public class Client1 {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			//connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -124,72 +125,72 @@ public class Client1 {
 		lblMat.setBackground(Color.WHITE);
 		lblMat.setForeground(Color.BLACK);
 		lblMat.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblMat.setBounds(29, 69, 160, 32);
+		lblMat.setBounds(25, 97, 160, 32);
 		frame.getContentPane().add(lblMat);
 
 		lblNom = new JLabel("Nom de client:");
 		lblNom.setBackground(Color.WHITE);
 		lblNom.setForeground(Color.BLACK);
 		lblNom.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNom.setBounds(29, 107, 140, 32);
+		lblNom.setBounds(25, 135, 140, 32);
 		frame.getContentPane().add(lblNom);
 
 		lblPrenom = new JLabel("Prenom de client:");
 		lblPrenom.setBackground(Color.WHITE);
 		lblPrenom.setForeground(Color.BLACK);
 		lblPrenom.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrenom.setBounds(29, 144, 154, 32);
+		lblPrenom.setBounds(25, 172, 154, 32);
 		frame.getContentPane().add(lblPrenom);
 
 		lblNumeroTel = new JLabel("Numero de telephone:");
 		lblNumeroTel.setBackground(Color.WHITE);
 		lblNumeroTel.setForeground(Color.BLACK);
 		lblNumeroTel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNumeroTel.setBounds(29, 180, 193, 32);
+		lblNumeroTel.setBounds(25, 208, 193, 32);
 		frame.getContentPane().add(lblNumeroTel);
 
 		lblEmail = new JLabel("Email:");
 		lblEmail.setBackground(Color.WHITE);
 		lblEmail.setForeground(Color.BLACK);
 		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblEmail.setBounds(29, 220, 111, 32);
+		lblEmail.setBounds(25, 248, 111, 32);
 		frame.getContentPane().add(lblEmail);
 
 		lblType = new JLabel("Type de client:");
 		lblType.setBackground(Color.WHITE);
 		lblType.setForeground(Color.BLACK);
 		lblType.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblType.setBounds(29, 262, 140, 32);
+		lblType.setBounds(25, 290, 140, 32);
 		frame.getContentPane().add(lblType);
 
 		textFieldMat = new JTextField();
-		textFieldMat.setBounds(219, 69, 192, 31);
+		textFieldMat.setBounds(215, 97, 192, 31);
 		frame.getContentPane().add(textFieldMat);
 		textFieldMat.setColumns(10);
 
 		textFieldNom = new JTextField();
 		textFieldNom.setColumns(10);
-		textFieldNom.setBounds(219, 104, 193, 31);
+		textFieldNom.setBounds(215, 132, 193, 31);
 		frame.getContentPane().add(textFieldNom);
 
 		textFieldPrenom = new JTextField();
 		textFieldPrenom.setColumns(10);
-		textFieldPrenom.setBounds(219, 141, 193, 33);
+		textFieldPrenom.setBounds(215, 169, 193, 33);
 		frame.getContentPane().add(textFieldPrenom);
 
 		textFieldNumeroTel = new JTextField();
 		textFieldNumeroTel.setColumns(10);
-		textFieldNumeroTel.setBounds(219, 181, 193, 31);
+		textFieldNumeroTel.setBounds(215, 209, 193, 31);
 		frame.getContentPane().add(textFieldNumeroTel);
 		
 		textFieldEmail = new JTextField();
 		textFieldEmail.setColumns(10);
-		textFieldEmail.setBounds(219, 222, 193, 32);
+		textFieldEmail.setBounds(215, 250, 193, 32);
 		frame.getContentPane().add(textFieldEmail);
 		
 		textFieldType = new JTextField();
 		textFieldType.setColumns(10);
-		textFieldType.setBounds(219, 264, 193, 32);
+		textFieldType.setBounds(215, 292, 193, 32);
 		frame.getContentPane().add(textFieldType);
 
 
@@ -303,6 +304,7 @@ public class Client1 {
 		frame.getContentPane().add(btnSupprimer);
 		
 		JButton btnClose = new JButton("main");
+		btnClose.setIcon(new ImageIcon("home.png"));
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
@@ -313,7 +315,7 @@ public class Client1 {
 		});
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnClose.setBackground(new Color(255, 255, 255));
-		btnClose.setBounds(10, 6, 76, 53);
+		btnClose.setBounds(10, 6, 126, 91);
 		frame.getContentPane().add(btnClose);
 		
 		JButton btnAfficher = new JButton("Afficher");
@@ -351,7 +353,7 @@ public class Client1 {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
 			System.out.println("succ");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

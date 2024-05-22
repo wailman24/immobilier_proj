@@ -22,6 +22,7 @@ import javax.swing.JScrollPane;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import javax.swing.ImageIcon;
 
 public class RendezVous {
 
@@ -76,7 +77,8 @@ public class RendezVous {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -85,38 +87,39 @@ public class RendezVous {
 
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 906, 490);
+		frame.setBounds(100, 100, 906, 556);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
+		frame.setLocationRelativeTo(null);
+		
 		JLabel lblNewLabel = new JLabel("Rendez vous");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(30, 20, 120, 40);
+		lblNewLabel.setBounds(33, 139, 120, 40);
 		frame.getContentPane().add(lblNewLabel);
 
 		rendez_vous = new JTextField();
-		rendez_vous.setBounds(180, 20, 142, 40);
+		rendez_vous.setBounds(183, 139, 260, 40);
 		frame.getContentPane().add(rendez_vous);
 		rendez_vous.setColumns(10);
 
 		lblNumagt = new JLabel("Agent");
 		lblNumagt.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNumagt.setBounds(30, 70, 120, 40);
+		lblNumagt.setBounds(33, 189, 120, 40);
 		frame.getContentPane().add(lblNumagt);
 
 		lblNewLabel_2 = new JLabel("Client");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(30, 120, 120, 40);
+		lblNewLabel_2.setBounds(33, 239, 120, 40);
 		frame.getContentPane().add(lblNewLabel_2);
 
 		agent = new JTextField();
 		agent.setColumns(10);
-		agent.setBounds(180, 70, 142, 40);
+		agent.setBounds(183, 189, 260, 40);
 		frame.getContentPane().add(agent);
 
 		client = new JTextField();
 		client.setColumns(10);
-		client.setBounds(180, 120, 142, 40);
+		client.setBounds(183, 239, 260, 40);
 		frame.getContentPane().add(client);
 
 		JButton btninserer = new JButton("inserer");
@@ -187,17 +190,17 @@ public class RendezVous {
 		});
 		btninserer.setBackground(new Color(70, 130, 180));
 		btninserer.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btninserer.setBounds(420, 30, 150, 40);
+		btninserer.setBounds(10, 389, 150, 40);
 		frame.getContentPane().add(btninserer);
 
 		lblLaDate = new JLabel("Date");
 		lblLaDate.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblLaDate.setBounds(30, 220, 120, 40);
+		lblLaDate.setBounds(33, 339, 120, 40);
 		frame.getContentPane().add(lblLaDate);
 
 		date = new JTextField();
 		date.setColumns(10);
-		date.setBounds(180, 220, 142, 40);
+		date.setBounds(183, 339, 260, 40);
 		frame.getContentPane().add(date);
 
 		btnafficher = new JButton("afficher");
@@ -221,11 +224,11 @@ public class RendezVous {
 		});
 		btnafficher.setBackground(new Color(70, 130, 180));
 		btnafficher.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnafficher.setBounds(420, 210, 150, 40);
+		btnafficher.setBounds(10, 452, 472, 40);
 		frame.getContentPane().add(btnafficher);
 
 		JScrollPane tableE = new JScrollPane();
-		tableE.setBounds(10, 276, 647, 149);
+		tableE.setBounds(492, 46, 390, 446);
 		frame.getContentPane().add(tableE);
 
 		tableR = new JTable();
@@ -304,7 +307,7 @@ public class RendezVous {
 
 		btnModifier.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnModifier.setBackground(new Color(70, 130, 180));
-		btnModifier.setBounds(420, 90, 150, 40);
+		btnModifier.setBounds(172, 389, 150, 40);
 		frame.getContentPane().add(btnModifier);
 
 		JButton btnSuprimer = new JButton("suprimer");
@@ -357,10 +360,11 @@ public class RendezVous {
 		});
 		btnSuprimer.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnSuprimer.setBackground(new Color(70, 130, 180));
-		btnSuprimer.setBounds(420, 150, 150, 40);
+		btnSuprimer.setBounds(336, 389, 150, 40);
 		frame.getContentPane().add(btnSuprimer);
 		
 		JButton btnClose = new JButton("main");
+		btnClose.setIcon(new ImageIcon("home.png"));
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();
@@ -371,17 +375,17 @@ public class RendezVous {
 		});
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnClose.setBackground(new Color(255, 255, 255));
-		btnClose.setBounds(10, 6, 63, 20);
+		btnClose.setBounds(10, 6, 143, 95);
 		frame.getContentPane().add(btnClose);
 
 		lblNewLabel_1 = new JLabel("Bien");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(30, 170, 120, 40);
+		lblNewLabel_1.setBounds(33, 289, 120, 40);
 		frame.getContentPane().add(lblNewLabel_1);
 
 		bien = new JTextField();
 		bien.setColumns(10);
-		bien.setBounds(180, 170, 142, 40);
+		bien.setBounds(183, 289, 260, 40);
 		frame.getContentPane().add(bien);
 	}
 }

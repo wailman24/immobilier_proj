@@ -16,6 +16,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 public class tryone {
 
@@ -147,8 +148,8 @@ public class tryone {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			//connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -201,73 +202,73 @@ public class tryone {
 			}
 		});
 		btnajouter.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnajouter.setBounds(10, 450, 152, 43);
+		btnajouter.setBounds(10, 532, 152, 43);
 		frame.getContentPane().add(btnajouter);
 		
 		JLabel lblNewLabel = new JLabel("Numero bien : ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setBounds(10, 96, 134, 43);
+		lblNewLabel.setBounds(10, 132, 134, 43);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblTypeBien = new JLabel("type bien : ");
 		lblTypeBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTypeBien.setBounds(10, 149, 134, 43);
+		lblTypeBien.setBounds(10, 185, 134, 43);
 		frame.getContentPane().add(lblTypeBien);
 		
 		JLabel lblLocalisation = new JLabel("localisation : ");
 		lblLocalisation.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblLocalisation.setBounds(10, 202, 134, 43);
+		lblLocalisation.setBounds(10, 238, 134, 43);
 		frame.getContentPane().add(lblLocalisation);
 		
 		JLabel lblPrixVente = new JLabel("prix vente : ");
 		lblPrixVente.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrixVente.setBounds(10, 255, 134, 43);
+		lblPrixVente.setBounds(10, 291, 134, 43);
 		frame.getContentPane().add(lblPrixVente);
 		
 		JLabel lblPrixLocation = new JLabel("prix location : ");
 		lblPrixLocation.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPrixLocation.setBounds(10, 308, 134, 43);
+		lblPrixLocation.setBounds(10, 344, 134, 43);
 		frame.getContentPane().add(lblPrixLocation);
 		
 		JLabel lblTaille = new JLabel("taille : ");
 		lblTaille.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTaille.setBounds(10, 361, 134, 43);
+		lblTaille.setBounds(10, 397, 134, 43);
 		frame.getContentPane().add(lblTaille);
 		
 		txtNumBiens = new JTextField();
 		txtNumBiens.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtNumBiens.setBounds(140, 97, 280, 40);
+		txtNumBiens.setBounds(140, 133, 280, 40);
 		frame.getContentPane().add(txtNumBiens);
 		txtNumBiens.setColumns(10);
 		
 		txtTypeBiens = new JTextField();
 		txtTypeBiens.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtTypeBiens.setColumns(10);
-		txtTypeBiens.setBounds(140, 149, 280, 40);
+		txtTypeBiens.setBounds(140, 185, 280, 40);
 		frame.getContentPane().add(txtTypeBiens);
 		
 		txtlocalisation = new JTextField();
 		txtlocalisation.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtlocalisation.setColumns(10);
-		txtlocalisation.setBounds(140, 203, 280, 40);
+		txtlocalisation.setBounds(140, 239, 280, 40);
 		frame.getContentPane().add(txtlocalisation);
 		
 		txtPrixVent = new JTextField();
 		txtPrixVent.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtPrixVent.setColumns(10);
-		txtPrixVent.setBounds(140, 255, 280, 40);
+		txtPrixVent.setBounds(140, 291, 280, 40);
 		frame.getContentPane().add(txtPrixVent);
 		
 		txtprixLocation = new JTextField();
 		txtprixLocation.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtprixLocation.setColumns(10);
-		txtprixLocation.setBounds(140, 308, 280, 40);
+		txtprixLocation.setBounds(140, 344, 280, 40);
 		frame.getContentPane().add(txtprixLocation);
 		
 		txttaille = new JTextField();
 		txttaille.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txttaille.setColumns(10);
-		txttaille.setBounds(140, 361, 280, 40);
+		txttaille.setBounds(140, 397, 280, 40);
 		frame.getContentPane().add(txttaille);
 		
 		JButton btnNewButton = new JButton("Afficher les biens");
@@ -289,7 +290,7 @@ public class tryone {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnNewButton.setBounds(499, 449, 189, 43);
+		btnNewButton.setBounds(499, 531, 189, 43);
 		frame.getContentPane().add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -328,7 +329,7 @@ public class tryone {
 			}
 		});
 		btnSupprimerBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnSupprimerBien.setBounds(172, 450, 155, 43);
+		btnSupprimerBien.setBounds(172, 532, 155, 43);
 		frame.getContentPane().add(btnSupprimerBien);
 		
 		JButton btnModifierBien = new JButton("modifier bien");
@@ -386,7 +387,7 @@ public class tryone {
 			}
 		});
 		btnModifierBien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnModifierBien.setBounds(337, 450, 152, 43);
+		btnModifierBien.setBounds(337, 532, 152, 43);
 		frame.getContentPane().add(btnModifierBien);
 		
 		JLabel lblNewLabel_1 = new JLabel("Gestion des Biens");
@@ -396,6 +397,7 @@ public class tryone {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton_1 = new JButton("Main");
+		btnNewButton_1.setIcon(new ImageIcon("home.png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -407,18 +409,18 @@ public class tryone {
 		});
 
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton_1.setBounds(10, 10, 91, 56);
+		btnNewButton_1.setBounds(10, 10, 134, 99);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNbrCh = new JLabel("Nombre de chambre");
 		lblNbrCh.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNbrCh.setBounds(10, 526, 134, 43);
+		lblNbrCh.setBounds(10, 464, 204, 43);
 		frame.getContentPane().add(lblNbrCh);
 		
 		textFieldNbrCh = new JTextField();
 		textFieldNbrCh.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textFieldNbrCh.setColumns(10);
-		textFieldNbrCh.setBounds(140, 526, 280, 40);
+		textFieldNbrCh.setBounds(236, 465, 280, 40);
 		frame.getContentPane().add(textFieldNbrCh);
 	}
 }

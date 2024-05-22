@@ -80,8 +80,8 @@ public class Transaction {
             Class.forName("oracle.jdbc.driver.OracleDriver");
 
             // Establish connection
-            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
-            //connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
+            //connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "mansour_ouahchia", "wail");
             // Connection established successfully
             System.out.println("Connection established successfully!");
         } catch (ClassNotFoundException e) {
@@ -295,7 +295,7 @@ public class Transaction {
         frame.getContentPane().add(btndisplay);
         
         JButton btnClose = new JButton("main");
-        btnClose.setIcon(new ImageIcon("C:\\Users\\Asus\\OneDrive\\Desktop\\home.png"));
+        btnClose.setIcon(new ImageIcon("home.png"));
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AGENCE_IMMOBILIERE window = new AGENCE_IMMOBILIERE();

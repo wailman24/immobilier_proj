@@ -69,7 +69,8 @@ public class Historique {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","ELMOKRETAR","nabil");
+			connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","mansour_ouahchia","wail");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "ELMOKRETAR", "nabil");
 			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -77,12 +78,13 @@ public class Historique {
 		
 		frame = new JFrame();
 		frame.setBounds(1, 1, 965, 570);
-		frame.getContentPane().setBackground(new Color(0, 128, 128));
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel = new JLabel("Les demandes:");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblNewLabel.setBounds(10, 11, 115, 26);
 		frame.getContentPane().add(lblNewLabel);
@@ -95,7 +97,7 @@ public class Historique {
 		scrollPane.setViewportView(table);
 		
 		JLabel lblLes = new JLabel("Le rendez-vous:");
-		lblLes.setForeground(Color.WHITE);
+		lblLes.setForeground(Color.BLACK);
 		lblLes.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblLes.setBounds(10, 157, 128, 26);
 		frame.getContentPane().add(lblLes);
@@ -108,7 +110,7 @@ public class Historique {
 		scrollPane_1.setViewportView(table_1);
 		
 		lblLeTransaction = new JLabel("Le transaction:");
-		lblLeTransaction.setForeground(Color.WHITE);
+		lblLeTransaction.setForeground(Color.BLACK);
 		lblLeTransaction.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblLeTransaction.setBounds(10, 298, 128, 26);
 		frame.getContentPane().add(lblLeTransaction);
