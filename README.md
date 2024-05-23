@@ -6,4 +6,4 @@ Add the ojdbc11.jar and rs2xml.jar to the building path of the project (To conne
 -go to the project -> Build path -> configure Build path -> Classpath -> Add External JARs -> add your rs2xml.jar
 one last thing is to add your Oracle database (Username and password) to the classes that need these informations.
 like this : connection =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","Username","password");
-And create The data base table in your dataBase using the script project.sql 
+And create The data base table in your dataBase using the script project.sql.
