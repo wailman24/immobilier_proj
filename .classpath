@@ -6,11 +6,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/java projects/ojdbc11.jar">
+	<classpathentry kind="lib" path="D:/POO/immobilier_proj/ojdbc11.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/java projects/rs2xml.jar"/>
+	<classpathentry kind="lib" path="D:/POO/immobilier_proj/rs2xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
